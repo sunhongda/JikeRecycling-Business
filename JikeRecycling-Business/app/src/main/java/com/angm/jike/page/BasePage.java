@@ -7,4 +7,6 @@ public abstract  class BasePage  {
 
 
 
+    public void onDestroy() {
+    }
 }

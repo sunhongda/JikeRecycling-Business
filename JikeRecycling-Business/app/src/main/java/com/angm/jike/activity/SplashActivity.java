@@ -1,6 +1,7 @@
 package com.angm.jike.activity;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.widget.TextView;
 
 import com.angm.jike.R;
@@ -19,6 +20,13 @@ public class SplashActivity extends BaseActivity {
 
     @Bind(R.id.version_name)
     TextView versionName;
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
+    }
+
 
     @Override
     public int getLayout() {

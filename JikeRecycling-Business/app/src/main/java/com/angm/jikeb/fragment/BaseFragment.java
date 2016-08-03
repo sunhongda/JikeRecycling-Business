@@ -14,7 +14,7 @@ import android.view.ViewGroup;
  */
 public abstract class BaseFragment extends Fragment {
 
-//    BackActivity mActivity;
+    //    BackActivity mActivity;
     protected Toolbar mToolbar;
 
     @Override
@@ -43,7 +43,9 @@ public abstract class BaseFragment extends Fragment {
     }
 
     abstract public String getTitle();
+
     abstract protected int getFragmentLayout();
+
     abstract protected void initView();
 
 }

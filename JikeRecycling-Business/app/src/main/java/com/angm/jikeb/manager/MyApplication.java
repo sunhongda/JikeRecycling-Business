@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by shd on 16-8-1.
  */
-public class MyApplication extends android.app.Application {
+public class MyApplication extends  Application {
     private static MyApplication app;
     private List<Activity> activities;
     private Toast toast;
@@ -33,13 +33,17 @@ public class MyApplication extends android.app.Application {
         //初始化Toast
         ToastHelper.init(this);
     }
-
     public static Application getApplication() {
         return app;
     }
 
+
+    public static MyApplication getApp() {
+        return app;
+    }
+
     public static Context getContext() {
-        return getApplication().getApplicationContext();
+        return getApp().getApplicationContext();
     }
 
     public static String getVersionCode() {
@@ -88,6 +92,10 @@ public class MyApplication extends android.app.Application {
             ac.finish();
         }
     }
+    public void remove(Activity activity) {
+        activities.remove(activity);
+    }
+
 
     public void exitApp() {
         int size = activities.size();

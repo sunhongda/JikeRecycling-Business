@@ -1,4 +1,4 @@
-package com.angm.jike.util;
+package com.angm.jikeb.util;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;

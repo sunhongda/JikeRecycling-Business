@@ -1,4 +1,4 @@
-package com.angm.jike.constant;
+package com.angm.jikeb.constant;
 
 public class NetWorkConstant {
 

@@ -1,22 +1,24 @@
-package com.angm.jike.activity;
+package com.angm.jikeb.activity;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
 
-import com.angm.jike.R;
+import com.angm.jikeb.R;
 
-//注册页
-public class SignUpActivity extends BaseActivity {
+
+//登录
+public class SignInActivity extends  BaseActivity {
 
 
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
+
     }
 
     @Override
     public int getLayout() {
-        return  R.layout.sign_up_bus;
+        return R.layout.sign_in;
     }
 
     @Override
@@ -28,6 +30,24 @@ public class SignUpActivity extends BaseActivity {
     public void initData() {
 
     }
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

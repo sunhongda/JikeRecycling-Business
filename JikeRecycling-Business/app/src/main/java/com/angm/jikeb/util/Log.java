@@ -1,4 +1,4 @@
-package com.angm.jike.util;
+package com.angm.jikeb.util;
 
 public class Log {
 

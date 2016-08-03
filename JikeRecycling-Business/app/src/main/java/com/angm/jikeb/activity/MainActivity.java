@@ -1,9 +1,10 @@
-package com.angm.jike.activity;
+package com.angm.jikeb.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import com.angm.jike.R;
+import com.angm.jikeb.R;
+
 
 public class MainActivity extends AppCompatActivity {
 

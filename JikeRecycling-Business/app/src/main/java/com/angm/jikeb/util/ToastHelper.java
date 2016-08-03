@@ -1,4 +1,4 @@
-package com.angm.jike.util;
+package com.angm.jikeb.util;
 
 import android.app.Application;
 import android.os.Handler;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.angm.jike.R;
+import com.angm.jikeb.R;
 
 import java.lang.ref.SoftReference;
 

@@ -1,11 +1,12 @@
-package com.angm.jike.manager;
+package com.angm.jikeb.manager;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.angm.jike.activity.MainActivity;
-import com.angm.jike.page.BasePage;
+import com.angm.jikeb.activity.MainActivity;
+import com.angm.jikeb.page.BasePage;
+
 
 public class PageManager {
 	private MainActivity activity;

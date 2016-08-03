@@ -1,4 +1,4 @@
-package com.angm.jike.page;
+package com.angm.jikeb.page;
 
 /**
  * Created by shd on 16-8-1.

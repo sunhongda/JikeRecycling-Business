@@ -1,10 +1,10 @@
-package com.angm.jike.activity;
+package com.angm.jikeb.activity;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.widget.TextView;
 
-import com.angm.jike.R;
+import com.angm.jikeb.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

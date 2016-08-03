@@ -1,4 +1,4 @@
-package com.angm.jike;
+package com.angm.jikeb;
 
 import org.junit.Test;
 

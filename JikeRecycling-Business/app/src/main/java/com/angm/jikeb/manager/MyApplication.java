@@ -1,4 +1,4 @@
-package com.angm.jike.manager;
+package com.angm.jikeb.manager;
 
 import android.app.Activity;
 import android.app.Application;
@@ -7,14 +7,12 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.widget.Toast;
 
-import com.angm.jike.constant.NetWorkConstant;
-import com.angm.jike.util.CrashUtils;
-import com.angm.jike.util.ToastHelper;
+import com.angm.jikeb.constant.NetWorkConstant;
+import com.angm.jikeb.util.CrashUtils;
+import com.angm.jikeb.util.ToastHelper;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.ButterKnife;
 
 /**
  * Created by shd on 16-8-1.

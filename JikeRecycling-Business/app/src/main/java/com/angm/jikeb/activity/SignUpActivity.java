@@ -5,6 +5,7 @@ import android.os.PersistableBundle;
 
 import com.angm.jikeb.R;
 
+
 //注册页
 public class SignUpActivity extends BaseActivity {
 

@@ -7,12 +7,10 @@ import android.widget.TextView;
 import com.angm.jikeb.R;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Created by shd on 16-8-1.
  * 引导界面  Activity
- *
  * @
  */
 public class SplashActivity extends BaseActivity {
@@ -49,6 +47,5 @@ public class SplashActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+     }
 }

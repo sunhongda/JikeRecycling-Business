@@ -9,19 +9,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.angm.jikeb.activity.BackActivity;
+
 /**
  * Created by shd on 16-8-3.
  */
 public abstract class BaseFragment extends Fragment {
 
-    //    BackActivity mActivity;
+    BackActivity mActivity;
     protected Toolbar mToolbar;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-//        mActivity = (BackActivity) activity;
-//        mToolbar = mActivity.getmToolbar();
+        mActivity = (BackActivity) activity;
+        mToolbar = mActivity.getToolbar();
     }
 
     @Nullable

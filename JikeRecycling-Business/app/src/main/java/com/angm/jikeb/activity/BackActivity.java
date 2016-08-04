@@ -34,11 +34,16 @@ public abstract class BackActivity extends BaseActivity {
         initToolBar();
     }
 
-    // TODO: 2016-08-03    对 toolbar 进行重新赋值
-    public void initToolBar() {
+     // TODO: 2016-08-03    对 toolbar 进行重新赋值
+     public void initToolBar() {
         tvToolbarCenter.setText(getTitileStr());
     }
 
      // TODO: 2016-08-03   重新进行赋值
-     abstract String getTitileStr();
+     public abstract String getTitileStr();
+
+    public Toolbar getToolbar(){
+        return toolbar;
+    }
+
 }

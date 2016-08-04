@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">JikeRecycling-Business</string>
+
+
+    <!--activityMain -->
+    <string name="tv_main_home">首頁</string>
+
 </resources>

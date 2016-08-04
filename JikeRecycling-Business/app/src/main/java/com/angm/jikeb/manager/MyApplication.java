@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.angm.jikeb.constant.NetWorkConstant;
 import com.angm.jikeb.util.CrashUtils;
 import com.angm.jikeb.util.ToastHelper;
+import com.yolanda.nohttp.NoHttp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,8 @@ public class MyApplication extends  Application {
         CrashUtils.getInstance().init(this, NetWorkConstant.FRONTEND_ERROR);
         //初始化Toast
         ToastHelper.init(this);
+
+        NoHttp.init(this);
     }
     public static Application getApplication() {
         return app;

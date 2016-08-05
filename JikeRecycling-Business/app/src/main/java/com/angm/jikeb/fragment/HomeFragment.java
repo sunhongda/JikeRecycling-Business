@@ -3,7 +3,7 @@ package com.angm.jikeb.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.angm.jikeb.R;
+import com.angm.jikeb.base.BaseFragment;
 
 /**
  * Created by shd on 16-8-4.
@@ -17,21 +17,7 @@ public class HomeFragment extends BaseFragment {
 
     }
 
-    @Override
-    public String getTitle() {
-        return "我的";
-    }
 
-    @Override
-    protected int getFragmentLayout() {
-        return  R.layout.fragment_vp_home;
-
-    }
-
-    @Override
-    protected void initView() {
-
-    }
 
 
 }

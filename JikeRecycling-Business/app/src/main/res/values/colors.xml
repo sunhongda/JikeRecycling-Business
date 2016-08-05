@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="default_font_color_cff">#ffffff</color>
 
+    <color name="green">#2ed964</color>
+    <color name="green_p">#279f00</color>
+
 </resources>

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 
 import com.angm.jikeb.R;
+import com.angm.jikeb.base.BaseActivity;
 
 
 //注册页

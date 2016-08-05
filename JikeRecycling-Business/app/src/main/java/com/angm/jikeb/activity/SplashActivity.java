@@ -5,6 +5,7 @@ import android.os.PersistableBundle;
 import android.widget.TextView;
 
 import com.angm.jikeb.R;
+import com.angm.jikeb.base.BaseActivity;
 
 import butterknife.Bind;
 

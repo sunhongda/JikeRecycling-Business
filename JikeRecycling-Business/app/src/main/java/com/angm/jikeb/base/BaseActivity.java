@@ -1,4 +1,4 @@
-package com.angm.jikeb.activity;
+package com.angm.jikeb.base;
 
 import android.content.Intent;
 import android.os.Bundle;

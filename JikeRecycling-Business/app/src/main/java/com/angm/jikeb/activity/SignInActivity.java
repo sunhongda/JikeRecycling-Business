@@ -4,10 +4,11 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 
 import com.angm.jikeb.R;
+import com.angm.jikeb.base.BaseActivity;
 
 
 //登录
-public class SignInActivity extends  BaseActivity {
+public class SignInActivity extends BaseActivity {
 
 
     @Override

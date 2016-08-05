@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.amap.api.maps2d.AMap;
 import com.angm.jikeb.R;
+import com.angm.jikeb.base.BaseActivity;
 import com.angm.jikeb.fragment.HomeFragment;
 import com.angm.jikeb.fragment.MapFragment;
 import com.angm.jikeb.fragment.RecyclFragment;
@@ -107,7 +108,7 @@ public class MainActivity extends BaseActivity {
     public void InitImage() {
         Log.i("  InitImage  ");
 //        imageLine = (ImageView) findViewById(R.id.iv_title);
-        bmpW = BitmapFactory.decodeResource(getResources(), R.drawable.fab_background).getWidth();
+        bmpW = BitmapFactory.decodeResource(getResources(), R.drawable.bg_common_toast).getWidth();
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int screenW = dm.widthPixels;

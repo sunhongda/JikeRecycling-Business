@@ -10,13 +10,23 @@
         android:name=".manager.MyApplication"
         android:theme="@style/AppTheme">
         <activity android:name="com.angm.jikeb.activity.MainActivity">
+     <!--       <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+
+        <activity android:name="com.angm.jikeb.activity.TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
+
 
     <!--高德地图需要配置-->
     <meta-data

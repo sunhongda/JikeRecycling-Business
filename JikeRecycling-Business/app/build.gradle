@@ -5,8 +5,8 @@ android {
     buildToolsVersion '23.0.3'
 
     defaultConfig {
-        applicationId "com.angm.jike"
-        minSdkVersion 19
+        applicationId "com.angm.jikeb"
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -31,7 +31,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.yolanda.nohttp:nohttp:+'
-    compile 'com.android.support:design:22.2.0'
     compile files('libs/AMap_2DMap_V2.9.0_20160525.jar')
     compile files('libs/AMap_Location_V2.4.1_20160414.jar')
 }

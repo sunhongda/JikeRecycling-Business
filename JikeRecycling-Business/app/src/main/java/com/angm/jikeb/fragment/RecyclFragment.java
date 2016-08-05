@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.angm.jikeb.R;
+import com.angm.jikeb.base.BaseFragment;
 
 /**
  * Created by shd on 16-8-4.
  */
-public class RecyclFragment extends BaseFragment  {
+public class RecyclFragment extends BaseFragment {
 
     @Nullable
     @Override
@@ -19,18 +19,5 @@ public class RecyclFragment extends BaseFragment  {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
-    @Override
-    public String getTitle() {
-        return "回收";
-    }
 
-    @Override
-    protected int getFragmentLayout() {
-        return  R.layout.fragment_vp_home;
-    }
-
-    @Override
-    protected void initView() {
-
-    }
 }

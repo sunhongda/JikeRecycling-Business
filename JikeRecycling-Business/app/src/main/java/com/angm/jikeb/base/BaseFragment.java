@@ -42,7 +42,7 @@ public abstract class BaseFragment extends Fragment {
      */
     protected abstract int getFragmentLayout();
 
-    protected abstract int FragmentInitData();
+    protected abstract void FragmentInitData();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

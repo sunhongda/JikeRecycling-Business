@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -13,6 +14,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -216,12 +219,12 @@ public class MainActivity extends BaseActivity {
         @Override
         public void onPageSelected(int arg0) {
             // TODO Auto-generated method stub
-         /*   Animation animation = new TranslateAnimation(currIndex * one, arg0 * one, 0, 0);//平移动画
+        Animation animation = new TranslateAnimation(currIndex * one, arg0 * one, 0, 0);//平移动画
             currIndex = arg0;
             animation.setFillAfter(true);//动画终止时停留在最后一帧，不然会回到没有执行前的状态
             animation.setDuration(200);//动画持续时间0.2秒
-            imageLine.startAnimation(animation);//是用ImageView来显示动画的
-            int i = currIndex + 1;*/
+            ivCursor.startAnimation(animation);//是用ImageView来显示动画的
+            int i = currIndex + 1;
             Toast.makeText(MainActivity.this, "您选择了第" + arg0 + "个页卡", Toast.LENGTH_SHORT).show();
         }
     }
@@ -236,7 +239,7 @@ public class MainActivity extends BaseActivity {
         } else {
             isWarnedToClose = true;
             //app.toast("再按一次退出");
-//            Snackbar.make(mainRl, "再按一次退出", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(mainRl, "再按一次退出", Snackbar.LENGTH_SHORT).show();
 
             new Handler().postDelayed(new Runnable() {
                 @Override

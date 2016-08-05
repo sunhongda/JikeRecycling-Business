@@ -27,7 +27,7 @@ public class MapFragment extends BaseFragment {
     }
 
     @Override
-    protected int FragmentInitData() {
-        return 0;
+    protected void FragmentInitData() {
+
     }
 }

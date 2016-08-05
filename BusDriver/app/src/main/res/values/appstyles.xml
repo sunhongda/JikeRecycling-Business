@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="tv_share">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">20dp</item>
+    </style>
+    <style name="bt_share">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+    <style name="NavPage">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <!-- <item name="android:background">@drawable/nav_page</item> -->
+        <item name="android:background">#FFE1E8EB</item>
+    </style>
+    <style name="tv_pay">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:gravity">left</item>
+        <item name="android:paddingLeft">30dp</item>
+    </style>
+
+    <style name="ll_purse">
+        <item name="android:background">#ffffff</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="tv_purse">
+        <item name="android:padding">5dp</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="tv_purse_right">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textColor">#c4c4c4</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textScaleX">0.5</item>
+    </style>
+    <style name="tv_purse_1">
+        <item name="android:padding">5dp</item>
+        <item name="android:textColor">#c4c4c4</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">right</item>
+    </style>
+</resources>

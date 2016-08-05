@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="70dp"
+              android:background="@color/white"
+              android:paddingTop="10dp"
+              android:gravity="center_vertical"
+              android:orientation="vertical"
+        >
+
+    <TextView
+            android:id="@+id/order_detail_passingdate_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="06月21日"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            />
+    <TextView
+            android:id="@+id/order_detail_passingaddress_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@mipmap/icon_passingaddress"
+            android:drawablePadding="6dp"
+            android:text="途经："
+            android:textSize="14dp"
+            android:textColor="#000000"
+            />
+</LinearLayout>

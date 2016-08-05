@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="bank_icons">
+        <item>@mipmap/icon_zhongguo</item>
+        <item>@mipmap/icon_gongshang</item>
+        <item>@mipmap/icon_jianshe</item>
+        <item>@mipmap/icon_jiaotong</item>
+        <item>@mipmap/icon_nonye</item>
+        <item>@mipmap/icon_youzheng</item>
+        <item>@mipmap/icon_zhongxin</item>
+        <item>@mipmap/icon_guangda</item>
+        <item>@mipmap/icon_minsheng</item>
+        <item>@mipmap/icon_huaxia</item>
+        <item>@mipmap/icon_guangfa</item>
+        <item>@mipmap/icon_shenfa</item>
+        <item>@mipmap/icon_zhaoshang</item>
+        <item>@mipmap/icon_xingye</item>
+        <item>@mipmap/icon_pufa</item>
+        <item>@mipmap/icon_pingan</item>
+        <item>@mipmap/icon_beijing</item>
+        <item>@mipmap/icon_beijingnonshang</item>
+    </array>
+</resources>

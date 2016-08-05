@@ -1,0 +1,23 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--<item name="android:fitsSystemWindows">true</item>-->
+        <item name="colorPrimary">#fff</item>
+        <item name="colorPrimaryDark">@android:color/black</item>
+        <!--按钮选中或者点击获得焦点后的颜色-->
+        <item name="colorAccent">@color/green</item>
+        <item name="actionMenuTextColor">@color/green</item>
+        <item name="android:actionMenuTextColor">@color/green</item>
+        <item name="android:itemTextAppearance">@color/green</item>
+        <!--和 colorAccent相反，正常状态下按钮的颜色-->
+        <item name="colorControlNormal">@color/green_p</item>
+        <!--Button按钮正常状态颜色-->
+        <item name="colorButtonNormal">@color/green</item>
+    </style>
+
+    <style name="Theme.Splash" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/NoAnimation</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+</resources>

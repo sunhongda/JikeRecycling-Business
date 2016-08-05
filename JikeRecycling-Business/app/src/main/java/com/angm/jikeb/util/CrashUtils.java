@@ -80,23 +80,24 @@ public class CrashUtils implements Thread.UncaughtExceptionHandler {
      */
     @Override
     public void uncaughtException(Thread thread, Throwable ex) {
-        if(ex != null && ex.getClass().equals(TimeoutException.class)) {
+        if (ex != null && ex.getClass().equals(TimeoutException.class)) {
             Log.e("uncaught_ex", ex.getMessage(), ex);
-            if(thread == Looper.getMainLooper().getThread()) {
+            if (thread == Looper.getMainLooper().getThread()) {
                 this.loop();
             }
 
         } else {
-            if(!recordCrash) {
+            if (!recordCrash) {
                 recordCrash = true;
-               handleException(ex);
-                if(mDefaultHandler != null) {
+                handleException(ex);
+                if (mDefaultHandler != null) {
                     mDefaultHandler.uncaughtException(thread, ex);
                 }
             }
 
         }
     }
+
     private void loop() {
         try {
             Looper.loop();
@@ -105,6 +106,7 @@ public class CrashUtils implements Thread.UncaughtExceptionHandler {
         }
 
     }
+
     /**
      * 自定义错误处理,收集错误信息
      * 发送错误报告等操作均在此完成.
@@ -179,6 +181,7 @@ public class CrashUtils implements Thread.UncaughtExceptionHandler {
             }
         });*/
     }
+
     /**
      * 获取版本号
      *
@@ -194,6 +197,7 @@ public class CrashUtils implements Thread.UncaughtExceptionHandler {
         }
         return 0;
     }
+
     /**
      * 获取错误报告文件名
      *

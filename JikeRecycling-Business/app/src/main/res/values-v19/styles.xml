@@ -14,6 +14,11 @@
         <!--Button按钮正常状态颜色-->
         <item name="colorButtonNormal">@color/green</item>
     </style>
+   <!--   //返回箭头图标
+    <style name="OverflowButtonStyle" parent="@android:style/Widget.ActionButton.Overflow">
+
+        <item name="android:src">@null</item>
+    </style>-->
 
     <style name="Theme.Splash" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowAnimationStyle">@style/NoAnimation</item>

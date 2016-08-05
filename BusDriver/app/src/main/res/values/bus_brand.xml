@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="busbrand">
+        <item>安凯客车</item>
+        <item>奔驰客车</item>
+        <item>长安客车</item>
+        <item>常隆客车</item>
+        <item>大宇客车</item>
+        <item>东风客车</item>
+        <item>福田客车</item>
+        <item>桂林客车</item>
+        <item>黄海客车</item>
+        <item>海格客车</item>
+        <item>恒通客车</item>
+        <item>金龙客车</item>
+        <item>金旅客车</item>
+        <item>JAC客车</item>
+        <item>江淮客车</item>
+        <item>柯斯达客车</item>
+        <item>南车客车</item>
+        <item>青年客车</item>
+        <item>少林客车</item>
+        <item>申龙客车</item>
+        <item>沃尔沃客车</item>
+        <item>宇通客车</item>
+        <item>亚星客车</item>
+        <item>中通客车</item>
+        <item>其它客车</item>
+    </string-array>
+</resources>

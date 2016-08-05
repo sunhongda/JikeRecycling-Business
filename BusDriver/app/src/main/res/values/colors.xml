@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="yellow">#FDDA35</color>
+    <color name="blue">#4DC6FD</color>
+    <color name="purple">#8D57C4</color>
+    <color name="pink">#FF6F94</color>
+    <!--<color name="green">#27CF00</color>-->
+    <color name="green">#2ed964</color>
+
+    <color name="divider">#E6E6E6</color>
+
+    <color name="hint_color">#999999</color>
+    <color name="black_3">#333333</color>
+    <color name="v6_navi_set_divider_line">#e0e0e0</color>
+    <color name="bg_login_btn_enabled">#ff0000</color>
+    <color name="bg_login_btn_pressed_true">#d20101</color>
+    <color name="white">#ffffff</color>
+    <color name="default_font_color_cff">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="default_font_color_c00">#000000</color>
+    <color name="black">#494949</color>
+    <color name="v4_btn_layout_bg">#fafafa</color>
+    <color name="report_error_divider_color">#CACACA</color>
+    <color name="text_thread">#6a333333</color>
+
+    <drawable name="dark_transparent">#B00000green_p00</drawable>
+    <drawable name="transparent">#00000000</drawable>
+    <color name="myThemeColor">#27cf00</color>
+    <color name="default_font_color_cg">#31c464</color>
+    <color name="button_gray">#9e9e9e</color>
+    <color name="red">#d34e3b</color>
+    <color name="divider_white">#ADB9C9</color>
+    <color name="gray_white">#e8e8e8</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="gray">#F0F0F0</color>
+    <color name="enabledfalse">#e0e0e0</color>
+    <color name="green_p">#279f00</color>
+    <color name="separator">#dcdcdc</color>
+    <color name="theme_background">#efeff4</color>
+    <color name="backgroundColor">#ffffff</color>
+    <color name="backgroundColorPress">#DBDBD3</color>
+
+    <color name="wbg">#e6e6e6</color>
+    <color name="text_black">#cf000000</color>
+    <color name="text_secead">#8a000000</color>
+    <color name="bg">#f7f7f8</color>
+    <color name="trans">#0000</color>
+
+
+
+    <color name="text_green">#c727cf00</color>
+    <color name="text_white">#c7ffffff</color>
+
+    <color name="diver">#c7dcdcdc</color>
+
+    <color name="to_pay_two_red">#ff9933</color>
+    <color name="colorPrimaryDark">#e2f2e6</color>
+
+    <color name="dark_gray">#727272</color>
+
+    <color name="circle_white">#f0ebe5e5</color>
+    <color name="tx_white">#f0ffffff</color>
+
+</resources>

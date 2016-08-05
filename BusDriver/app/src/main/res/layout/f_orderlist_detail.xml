@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/wbg"
+android:orientation="vertical"
+    >
+
+    <!--android:layout_marginTop="@dimen/margin_top_16dp"-->
+    <!--android:layout_marginBottom="@dimen/margin_top_8dp"-->
+<ScrollView
+    android:id="@+id/sv"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="visible">
+
+    <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+    <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+
+    <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+    <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="@dimen/corners_8dp"
+        android:layout_marginRight="@dimen/corners_8dp"
+
+
+
+        app:cardBackgroundColor="@color/green"
+        app:cardPreventCornerOverlap="false"
+        app:cardCornerRadius="@dimen/corners_10dp">
+
+        <!--android:layout_marginTop="@dimen/padding_8dp" 这个影响顶端红色覆盖面积-->
+        <LinearLayout
+            android:layout_marginTop="@dimen/padding_8dp"
+            android:background="@color/bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg"
+                android:orientation="vertical"
+             >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_1_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="订单号：BS20150917"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_12sp" />
+
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_1_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="时间：2015.9.28"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_12sp" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="总人数"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_1_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="？？人（含儿童）"
+                        android:textColor="@color/text_secead"
+                        android:textSize="@dimen/tx_14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_plane"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/margin_top_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_flight_train_number_pre"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="航班号"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_flight_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="未知"
+                        android:textColor="@color/text_secead"
+                        android:textSize="@dimen/tx_14sp" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/margin_top_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="用车数量"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_cars_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="共？辆"
+                        android:textColor="@color/text_secead"
+                        android:textSize="@dimen/tx_14sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/margin_top_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="车龄"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_car_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="不限"
+                        android:textColor="@color/text_secead"
+                        android:textSize="@dimen/tx_14sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/margin_top_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="司机福利"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_driver_welfare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="没有更多福利"
+                        android:textColor="@color/text_secead"
+                        android:textSize="@dimen/tx_14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/margin_top_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="行程周期"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="共？天"
+                        android:textColor="@color/text_secead"
+                        android:textSize="@dimen/tx_14sp" />
+                </LinearLayout>
+
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/margin_top_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="驾车里程"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_1_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/text_green"
+                        android:textSize="@dimen/tx_14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/margin_top_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="意向出价"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_intent_bid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="没有意向出价"
+                        android:textColor="@color/text_secead"
+                        android:textSize="@dimen/tx_14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_alreadypay"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/margin_top_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="已付金额"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_alreadypay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="？？？元"
+                        android:textColor="@color/text_secead"
+                        android:textSize="@dimen/tx_14sp" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/ll_refund"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/margin_top_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="退单补偿金"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_refund"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="？？？元"
+                        android:textColor="@color/text_secead"
+                        android:textSize="@dimen/tx_14sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_edit_quote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/margin_top_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    android:textSize="@dimen/tx_14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我的报价"
+                        android:textColor="@android:color/black"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+                    <EditText
+                        android:id="@+id/et_quote_2"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:singleLine="true"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/tx_14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="元"
+                        android:textColor="@android:color/black"/>
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="没有意向出价"-->
+                        <!--android:textColor="@color/text_secead"-->
+                        <!--android:textSize="@dimen/tx_14sp" />-->
+
+                    <Button
+                        android:id="@+id/bt_edit_quote"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
+
+                        android:text="编辑"
+                        />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                </LinearLayout>
+
+                <!--新照片墙-->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/img_104dp"
+                    android:background="@color/bg"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/quote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="此订单您已报价？元"
+                android:textColor="@color/green"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                >
+
+                <EditText
+                    android:id="@+id/et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="right"
+                    android:hint="请输入报价金额"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="元"
+                    android:textColor="@android:color/black"/>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_button_2"
+                android:text="发送报价"
+                android:textColor="@android:color/white"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</ScrollView>
+</FrameLayout>
+
+
+
+
+
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:id="@+id/cv"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:foreground="?attr/selectableItemBackground"-->
+<!--app:cardBackgroundColor="@color/blue"-->
+<!--app:cardCornerRadius="@dimen/card_view_corner"-->
+
+<!--app:cardPreventCornerOverlap="false">-->
+
+
+
+<!--<ScrollView-->
+    <!--android:id="@+id/sv"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!-->-->
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_marginTop="@dimen/padding_8dp"-->
+
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical">-->
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/bg"-->
+            <!--android:orientation="vertical"-->
+            <!--android:paddingBottom="@dimen/padding_40dp">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/activity_horizontal_margin"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_1_0"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="订单号：BS20150917"-->
+                    <!--android:textColor="@color/text_black"-->
+                    <!--android:textSize="@dimen/tx_12sp" />-->
+
+                <!--<View-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="1" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_1_1"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="时间：2015.9.28"-->
+                    <!--android:textColor="@color/text_black"-->
+                    <!--android:textSize="@dimen/tx_12sp" />-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="总人数"-->
+                    <!--android:textColor="@color/text_black"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_1_2"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginBottom="@dimen/activity_horizontal_margin"-->
+                    <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                    <!--android:text="15人（含儿童）"-->
+                    <!--android:textColor="@color/text_secead"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginTop="@dimen/margin_top_8dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="用车数量"-->
+                    <!--android:textColor="@color/text_black"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_cars_number"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="共1辆"-->
+                    <!--android:textColor="@color/text_secead"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+            <!--</LinearLayout>-->
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginTop="@dimen/margin_top_8dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="车型"-->
+                    <!--android:textColor="@color/text_black"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_car_type"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="舒适型"-->
+                    <!--android:textColor="@color/text_secead"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+            <!--</LinearLayout>-->
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginTop="@dimen/margin_top_8dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="司机福利"-->
+                    <!--android:textColor="@color/text_black"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_driver_welfare"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="包吃"-->
+                    <!--android:textColor="@color/text_secead"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginTop="@dimen/margin_top_8dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="总行程"-->
+                    <!--android:textColor="@color/text_black"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_days"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="共3天"-->
+                    <!--android:textColor="@color/text_secead"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/days"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginTop="@dimen/margin_top_8dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="驾车里程"-->
+                    <!--android:textColor="@color/text_black"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_1_3"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="@color/text_black"-->
+                    <!--android:textSize="@dimen/tx_14sp" />-->
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+        <!--<TextView-->
+            <!--android:id="@+id/quote"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:text="此订单您已报价1元"-->
+            <!--android:textColor="@color/green"-->
+            <!--android:visibility="gone" />-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/ll_4"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_marginTop="5dp">-->
+            <!--<EditText-->
+                <!--android:id="@+id/et"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:gravity="right"-->
+                <!--android:hint="请输入报价金额"-->
+                <!--android:inputType="number"-->
+                <!--android:maxLength="6"-->
+                <!--android:singleLine="true"-->
+                <!--android:textSize="14sp" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:text="元"-->
+                <!--android:textColor="@android:color/black"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:background="@drawable/selector_button_2"-->
+            <!--android:text="发送报价"-->
+            <!--android:textColor="@android:color/white" />-->
+    <!--</LinearLayout>-->
+
+<!--</ScrollView>-->
+<!--</android.support.v7.widget.CardView>-->

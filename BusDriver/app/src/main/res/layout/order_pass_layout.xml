@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/order_detail_passingdate_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minEms="5"
+            android:text=""
+            android:textColor="@color/text_secead"
+            android:textSize="14sp" />
+        <LinearLayout
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="1dp"
+                android:src="@mipmap/ic_down"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="1dp"
+                android:src="@mipmap/ic_car" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="1dp"
+                android:src="@mipmap/ic_d_line" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/order_detail_passingaddress_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=""
+            android:textColor="@color/text_black"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>

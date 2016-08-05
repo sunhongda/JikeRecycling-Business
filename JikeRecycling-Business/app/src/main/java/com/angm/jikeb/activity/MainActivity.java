@@ -1,55 +1,64 @@
 package com.angm.jikeb.activity;
 
 import android.app.FragmentTransaction;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.amap.api.maps2d.AMap;
+import com.amap.api.maps.AMap;
 import com.angm.jikeb.R;
 import com.angm.jikeb.base.BaseActivity;
 import com.angm.jikeb.fragment.HomeFragment;
 import com.angm.jikeb.fragment.LevelTwoFragment;
 import com.angm.jikeb.fragment.MapFragment;
 import com.angm.jikeb.fragment.RecyclFragment;
-import com.angm.jikeb.manager.MyApplication;
 import com.angm.jikeb.util.Log;
 
 import java.util.ArrayList;
 
+import butterknife.Bind;
 
 
 public class MainActivity extends BaseActivity {
 
+    @Bind(R.id.tv_life)
+    TextView tvLife;
+    @Bind(R.id.tv_center)
+    TextView tvCenter;
+    @Bind(R.id.tv_right)
+    TextView tvRight;
+    @Bind(R.id.linearLayout1)
+    LinearLayout linearLayout1;
+    @Bind(R.id.iv_cursor)
+    ImageView ivCursor;
+    @Bind(R.id.toolbarTop)
+    Toolbar toolbarTop;
+    @Bind(R.id.vp_main)
+    ViewPager mPager;
+    @Bind(R.id.content_frame)
+    FrameLayout contentFrame;
+    @Bind(R.id.main_rl)
+    LinearLayout mainRl;
     private boolean isWarnedToClose = false;
     private AMap mMap;
-    private ViewPager mPager;
     private int anInt;
     private int currIndex;//当前页卡编号
     private int bmpW;//横线图片宽度
     private int offset;//图片移动的偏移量
-    private ImageView imageLine;
-    private Toolbar mToolbar;
-    public MyApplication app;
-    public ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,31 +72,14 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
-        app = MyApplication.getApp();
-        app.addActivity(this);
-
-
-        String fragmentName = getIntent().getStringExtra("fragmentName");
-        Bundle bundle = getIntent().getBundleExtra("fragmentBundle");
         initToolbar();
-
-        try {
-            if (!TextUtils.isEmpty(fragmentName) && bundle != null) {
-                initFragment(fragmentName, bundle);
-            }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        }
+        InitViewPager();
+        InitImage();
     }
 
     @Override
     public void initData() {
-
+        application.addActivity(this);
     }
 
 
@@ -104,7 +96,7 @@ public class MainActivity extends BaseActivity {
 
 
     public Toolbar getmToolbar() {
-        return mToolbar;
+        return toolbarTop;
     }
 
 
@@ -122,15 +114,9 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initToolbar() {
-        mToolbar = (Toolbar) findViewById(R.id.toolbarTop);
-        mToolbar.setNavigationIcon(android.support.v7.appcompat.R.drawable.abc_ic_ab_back_mtrl_am_alpha);
-        mToolbar.setTitle("");
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        toolbarTop = (Toolbar) findViewById(R.id.toolbarTop);
+        toolbarTop.setTitle("");
+        toolbarTop.setNavigationIcon(null);
     }
 
     @Override
@@ -179,7 +165,7 @@ public class MainActivity extends BaseActivity {
     */
     public void InitImage() {
         Log.i("  InitImage  ");
-//        imageLine = (ImageView) findViewById(R.id.iv_title);
+//     imageLine = (ImageView) findViewById(R.id.iv_title);
         bmpW = BitmapFactory.decodeResource(getResources(), R.drawable.bg_common_toast).getWidth();
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -189,7 +175,7 @@ public class MainActivity extends BaseActivity {
         //imgageview设置平移，使下划线平移到初始位置（平移一个offset）
         Matrix matrix = new Matrix();
         matrix.postTranslate(anInt, 0);
-        imageLine.setImageMatrix(matrix);
+        ivCursor.setImageMatrix(matrix);
     }
 
     public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
@@ -230,13 +216,13 @@ public class MainActivity extends BaseActivity {
         @Override
         public void onPageSelected(int arg0) {
             // TODO Auto-generated method stub
-            Animation animation = new TranslateAnimation(currIndex * one, arg0 * one, 0, 0);//平移动画
+         /*   Animation animation = new TranslateAnimation(currIndex * one, arg0 * one, 0, 0);//平移动画
             currIndex = arg0;
             animation.setFillAfter(true);//动画终止时停留在最后一帧，不然会回到没有执行前的状态
             animation.setDuration(200);//动画持续时间0.2秒
             imageLine.startAnimation(animation);//是用ImageView来显示动画的
-            int i = currIndex + 1;
-            Toast.makeText(MainActivity.this, "您选择了第" + i + "个页卡", Toast.LENGTH_SHORT).show();
+            int i = currIndex + 1;*/
+            Toast.makeText(MainActivity.this, "您选择了第" + arg0 + "个页卡", Toast.LENGTH_SHORT).show();
         }
     }
 

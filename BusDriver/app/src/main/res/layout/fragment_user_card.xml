@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <FrameLayout
+            android:layout_width="280dp"
+            android:layout_height="210dp"
+            android:background="@drawable/shape_biankuang"
+            android:padding="1dp">
+
+            <ImageView
+                android:id="@+id/id_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/idcard_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/loading"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="身份证"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="280dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_biankuang"
+            android:padding="1dp">
+
+            <ImageView
+                android:id="@+id/licence"
+                android:layout_width="280dp"
+                android:layout_height="210dp" />
+
+            <ImageView
+                android:id="@+id/licence_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/loading"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="驾驶证"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="280dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_biankuang"
+            android:padding="1dp">
+
+            <ImageView
+                android:id="@+id/jobcard"
+                android:layout_width="280dp"
+                android:layout_height="210dp" />
+
+            <ImageView
+                android:id="@+id/jop_card_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/loading"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="从业资格证"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+</ScrollView>

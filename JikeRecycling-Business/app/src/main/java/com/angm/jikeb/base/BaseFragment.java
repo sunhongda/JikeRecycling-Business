@@ -2,8 +2,14 @@ package com.angm.jikeb.base;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import butterknife.ButterKnife;
 
 /**
  * Created by shd on 16-8-3.
@@ -11,6 +17,7 @@ import android.util.Log;
 public abstract class BaseFragment extends Fragment {
 
     public BaseActivity activity;
+    private View view;
 
     @Override
     public void onAttach(Activity activity) {
@@ -18,9 +25,29 @@ public abstract class BaseFragment extends Fragment {
         this.activity = (BaseActivity) activity;
     }
 
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        view = LayoutInflater.from(container.getContext()).inflate(getFragmentLayout(), container, false);
+        ButterKnife.bind(this, view);
+        FragmentInitData();
+        return view;
+    }
+
+    /**
+     * 返回布局文件
+     *
+     * @return
+     */
+    protected abstract int getFragmentLayout();
+
+    protected abstract int FragmentInitData();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Log.d(getClass().getSimpleName(), getClass().getSimpleName() + ":onCreate");
     }
 

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">巴士互联司机</string>
+    <string name="company_name">巴士互联</string>
+
+    <string name="home">首页</string>
+    <string name="order_list">订单列表</string>
+    <string name="trip_list">行程列表</string>
+    
+    <string name="progress_message">加载中&#8230;</string>
+    <string name="gallay_error">图片不能被正确识别，请您更换图片</string>
+    <string name="publish_sd_notexist">sd卡不存在</string>
+    <string name="publish_fail">图片获取失败</string>
+
+    <string name="action_settings">Settings</string>
+    <!--<string name="action_ad_history">历史发布</string>-->
+    <string name="action_ad_history">我的发布</string>
+    <string name="action_feedback">发送</string>
+    <string name="action_change">收入明细</string>
+    <string name="action_banklist">添加</string>
+    <string name="action_tixian">提现记录</string>
+</resources>

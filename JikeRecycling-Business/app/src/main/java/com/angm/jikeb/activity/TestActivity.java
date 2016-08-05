@@ -5,18 +5,19 @@ import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.angm.jikeb.R;
+import com.angm.jikeb.base.BaseActivity;
 import com.angm.jikeb.fragment.LevelTwoFragment;
 import com.angm.jikeb.manager.MyApplication;
 
 /**
  * Created by shd on 16-8-5.
  */
-public class TestActivity extends AppCompatActivity {
+public class TestActivity extends BaseActivity {
 
     private Toolbar mToolbar;
     public MyApplication app;
@@ -25,8 +26,17 @@ public class TestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activtiy_test);
-         app = MyApplication.getApp();
+    }
+
+    @Override
+    public int getLayout() {
+        return R.layout.activtiy_test;
+    }
+
+    @Override
+    public void initView() {
+
+        app = MyApplication.getApp();
         app.addActivity(this);
         dialog = new ProgressDialog(this);
         dialog.setMessage("努力加载中");
@@ -34,15 +44,24 @@ public class TestActivity extends AppCompatActivity {
         String fragmentName = getIntent().getStringExtra("fragmentName");
         Bundle bundle = getIntent().getBundleExtra("fragmentBundle");
         initToolbar();
-     /*   try {
-            initFragment(fragmentName, bundle);
+
+
+        try {
+            if (!TextUtils.isEmpty(fragmentName) && bundle != null) {
+                initFragment(fragmentName, bundle);
+            }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
             e.printStackTrace();
-        }*/
+        }
+    }
+
+    @Override
+    public void initData() {
+
     }
 
     private void initToolbar() {
@@ -72,6 +91,8 @@ public class TestActivity extends AppCompatActivity {
         return mToolbar;
     }
 
+
+
     public void startFragment(Class<?> activity, Class<?> fragment, Intent intent) {
         if (intent == null) {
             intent = new Intent();
@@ -84,4 +105,5 @@ public class TestActivity extends AppCompatActivity {
     public void startFragment(Class<?> activity, Class<?> fragment) {
         startFragment(activity, fragment, null);
     }
+
 }

@@ -1,12 +1,20 @@
 package com.angm.jikeb.activity;
 
+import android.app.FragmentTransaction;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.os.Bundle;
 import android.os.Handler;
+import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.Animation;
@@ -19,18 +27,18 @@ import com.amap.api.maps2d.AMap;
 import com.angm.jikeb.R;
 import com.angm.jikeb.base.BaseActivity;
 import com.angm.jikeb.fragment.HomeFragment;
+import com.angm.jikeb.fragment.LevelTwoFragment;
 import com.angm.jikeb.fragment.MapFragment;
 import com.angm.jikeb.fragment.RecyclFragment;
+import com.angm.jikeb.manager.MyApplication;
 import com.angm.jikeb.util.Log;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
 
 
 public class MainActivity extends BaseActivity {
-    @Bind(R.id.main_rl)
-    RelativeLayout mainRl;
+
     private boolean isWarnedToClose = false;
     private AMap mMap;
     private ViewPager mPager;
@@ -39,7 +47,14 @@ public class MainActivity extends BaseActivity {
     private int bmpW;//横线图片宽度
     private int offset;//图片移动的偏移量
     private ImageView imageLine;
+    private Toolbar mToolbar;
+    public MyApplication app;
+    public ProgressDialog dialog;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public int getLayout() {
@@ -48,10 +63,26 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        Log.i(" initView ");
 
-        InitImage();
-        InitViewPager();
+        app = MyApplication.getApp();
+        app.addActivity(this);
+
+
+        String fragmentName = getIntent().getStringExtra("fragmentName");
+        Bundle bundle = getIntent().getBundleExtra("fragmentBundle");
+        initToolbar();
+
+        try {
+            if (!TextUtils.isEmpty(fragmentName) && bundle != null) {
+                initFragment(fragmentName, bundle);
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -60,6 +91,47 @@ public class MainActivity extends BaseActivity {
     }
 
 
+    private void initFragment(String name, Bundle bundle) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Class c = Class.forName(name);
+        LevelTwoFragment fragment = (LevelTwoFragment) c.newInstance();
+        fragment.setArguments(bundle);
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_frame, fragment);
+        ft.setCustomAnimations(R.anim.fragment_fade_enter, R.anim.fragment_fade_exit);
+        ft.commit();
+    }
+
+
+    public Toolbar getmToolbar() {
+        return mToolbar;
+    }
+
+
+    public void startFragment(Class<?> activity, Class<?> fragment, Intent intent) {
+        if (intent == null) {
+            intent = new Intent();
+        }
+        intent.putExtra("fragmentName", fragment.getName());
+        intent.setClass(this, activity);
+        startActivity(intent);
+    }
+
+    public void startFragment(Class<?> activity, Class<?> fragment) {
+        startFragment(activity, fragment, null);
+    }
+
+    private void initToolbar() {
+        mToolbar = (Toolbar) findViewById(R.id.toolbarTop);
+        mToolbar.setNavigationIcon(android.support.v7.appcompat.R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        mToolbar.setTitle("");
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
 
     @Override
     protected void onResume() {

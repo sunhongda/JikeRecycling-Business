@@ -2,7 +2,6 @@ package com.angm.jikeb.base;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.angm.jikeb.manager.MyApplication;
@@ -11,35 +10,36 @@ import butterknife.ButterKnife;
 
 /**
  * Created by shd on 16-8-1.
+ * activity 的最高抽象
  */
 public abstract class BaseActivity extends AppCompatActivity {
-    public MyApplication app;
+    public MyApplication application;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(getLayout());
-        app = MyApplication.getApp();
+
         initView();
         initData();
-        //初始化 註解工具
         ButterKnife.bind(this);
+        application = MyApplication.getApp();
 
     }
 
+
     public abstract int getLayout();
+
 
     public abstract void initView();
 
-    public abstract void initData();
 
+    public abstract void initData();
 
     @Override
     protected void onDestroy() {
+        application.remove(this);
         super.onDestroy();
-//        app.remove(this);
-        ButterKnife.unbind(this);
-
     }
 
     public void startFragment(Class<?> activity, Class<?> fragment, Intent intent) {

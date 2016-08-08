@@ -5,8 +5,6 @@ package com.angm.jikeb.page;
  */
 public abstract  class BasePage  {
 
-
-
     public void onDestroy() {
     }
 }

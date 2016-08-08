@@ -62,7 +62,7 @@ public class MainActivity extends BaseActivity {
     private int currIndex;//当前页卡编号
     private int bmpW;//横线图片宽度
     private int offset;//图片移动的偏移量
-
+///11
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

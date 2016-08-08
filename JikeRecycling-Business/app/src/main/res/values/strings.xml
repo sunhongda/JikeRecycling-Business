@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">JikeRecycling-Business</string>
-
-
+    <string name="app_name">即客回收-商家</string>
     <!--activityMain -->
     <string name="tv_main_home">首頁</string>
 

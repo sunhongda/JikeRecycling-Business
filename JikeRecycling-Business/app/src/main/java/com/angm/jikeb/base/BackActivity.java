@@ -50,8 +50,7 @@ public abstract class BackActivity extends BaseActivity {
     }
 
     private void initToolbar() {
-        mToolbar = (Toolbar) findViewById(R.id.toolbarTop);
-        mToolbar.setNavigationIcon(android.support.v7.appcompat.R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+         mToolbar.setNavigationIcon(android.support.v7.appcompat.R.drawable.abc_ic_ab_back_mtrl_am_alpha);
         mToolbar.setTitle("");
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

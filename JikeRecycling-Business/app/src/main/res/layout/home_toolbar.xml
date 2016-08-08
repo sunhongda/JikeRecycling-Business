@@ -1,69 +1,16 @@
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/toolbarTop"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorPrimary"
+    android:contentInsetStart="0dp"
     android:fitsSystemWindows="true"
     android:minHeight="?attr/actionBarSize"
-
     android:theme="@style/ToolbarTheme">
 
-    <LinearLayout
+    <com.angm.jikeb.view.Indicator.SlidingTabLayout
+        android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-            <LinearLayout
-                android:id="@+id/linearLayout1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-
-                <TextView
-                    android:id="@+id/tv_life"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.0"
-                    android:gravity="center"
-                    android:text="页卡1"
-                    android:textColor="#000000"
-                    android:textSize="22.0dip" />
-
-                <TextView
-                    android:id="@+id/tv_center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.0"
-                    android:gravity="center"
-                    android:text="页卡2"
-                    android:textColor="#000000"
-                    android:textSize="22.0dip" />
-
-                <TextView
-                    android:id="@+id/tv_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.0"
-                    android:gravity="center"
-                    android:text="页卡3"
-                    android:textColor="#000000"
-                    android:textSize="22.0dip" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/iv_cursor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="matrix"
-                android:src="@drawable/bg_common_toast" />
-
-
-        </LinearLayout>
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:translationZ="3dp" />
 
 </android.support.v7.widget.Toolbar>

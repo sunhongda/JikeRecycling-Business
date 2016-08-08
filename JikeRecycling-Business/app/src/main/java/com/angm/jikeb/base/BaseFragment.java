@@ -13,6 +13,8 @@ import butterknife.ButterKnife;
 
 /**
  * Created by shd on 16-8-3.
+ * 所有普通的Fragment 继承 此基类
+ *
  */
 public abstract class BaseFragment extends Fragment {
 

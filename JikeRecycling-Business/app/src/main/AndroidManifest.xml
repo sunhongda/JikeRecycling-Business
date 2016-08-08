@@ -27,6 +27,12 @@
                 </intent-filter>-->
         </activity>
 
+        <activity
+            android:name=".base.BackActivity"
+            android:label=""
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
 
         <activity
             android:name=".activity.SignInActivity"

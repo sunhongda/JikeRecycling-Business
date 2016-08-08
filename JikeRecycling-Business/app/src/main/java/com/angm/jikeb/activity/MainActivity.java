@@ -18,8 +18,9 @@ import android.widget.RelativeLayout;
 import com.amap.api.maps.AMap;
 import com.angm.jikeb.R;
 import com.angm.jikeb.base.BaseActivity;
+import com.angm.jikeb.base.BaseFragment;
+import com.angm.jikeb.fragment.FindFragment;
 import com.angm.jikeb.fragment.HomeFragment;
-import com.angm.jikeb.fragment.MapFragment;
 import com.angm.jikeb.fragment.RecyclFragment;
 import com.angm.jikeb.view.Indicator.SlidingTabLayout;
 
@@ -42,6 +43,7 @@ public class MainActivity extends BaseActivity {
     RelativeLayout mainRl;
     private boolean isWarnedToClose = false;
     private AMap mMap;
+
     ///11
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,19 +96,20 @@ public class MainActivity extends BaseActivity {
         super.onResume();
 
     }
-     /*
-       * 初始化ViewPager
-       */
+
+    /**
+     * 初始化ViewPager
+     */
     public void initViewPager() {
         ArrayList<Fragment> fragmentList = new ArrayList<Fragment>();
 
-        HomeFragment homeFragment = new HomeFragment();
-        RecyclFragment recyclFragment = new RecyclFragment();
-        MapFragment mapFragment = new MapFragment();
+        BaseFragment homeFragment = new HomeFragment();
+        BaseFragment recyclFragment = new RecyclFragment();
+        BaseFragment findFragment = new FindFragment();
 
         fragmentList.add(homeFragment);
         fragmentList.add(recyclFragment);
-        fragmentList.add(mapFragment);
+        fragmentList.add(findFragment);
 
         //给ViewPager设置适配器
         mPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentList, this));

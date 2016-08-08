@@ -9,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.angm.jikeb.activity.TestActivity;
+import com.angm.jikeb.base.BackActivity;
+
+import butterknife.ButterKnife;
 
 
 /**
@@ -17,21 +19,29 @@ import com.angm.jikeb.activity.TestActivity;
  * 带返回箭头的fragment
  */
 public abstract class LevelTwoFragment extends Fragment {
+    public LevelTwoFragment() {
+    }
 
-    TestActivity mActivity;
+    BackActivity mActivity;
     protected Toolbar mToolbar;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        mActivity = (TestActivity) activity;
+        mActivity = (BackActivity) activity;
         mToolbar = mActivity.getmToolbar();
+
+
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(getResLayout(), null);
+
+        View inflate = inflater.inflate(getResLayout(), null);
+        ButterKnife.bind(this, inflate);
+
+        return inflate;
     }
 
     @Override
@@ -47,7 +57,13 @@ public abstract class LevelTwoFragment extends Fragment {
     }
 
     abstract public String getTitle();
+
     abstract protected int getResLayout();
+
     abstract protected void initView();
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 }

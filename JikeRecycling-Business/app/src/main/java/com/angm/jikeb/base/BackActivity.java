@@ -8,26 +8,49 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.angm.jikeb.R;
 import com.angm.jikeb.fragment.LevelTwoFragment;
 import com.angm.jikeb.manager.MyApplication;
 
+import butterknife.Bind;
+
 /**
  * Created by shd on 16-8-3.
  * 用于 带返回按钮的activity 用于启动带箭头的fragment
  */
-public abstract class BackActivity extends BaseActivity {
+public class BackActivity extends BaseActivity {
 
 
-    private Toolbar mToolbar;
+    @Bind(R.id.tv_toolbar_center)
+    TextView tvToolbarCenter;
+    @Bind(R.id.toolbarTop)
+    Toolbar mToolbar;
+    @Bind(R.id.content_frame)
+    FrameLayout contentFrame;
     public MyApplication app;
     public ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activtiy_test);
+
+    }
+
+    @Override
+    public int getLayout() {
+        return R.layout.activtiy_test;
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initData() {
         app = MyApplication.getApp();
         app.addActivity(this);
         dialog = new ProgressDialog(this);
@@ -50,7 +73,7 @@ public abstract class BackActivity extends BaseActivity {
     }
 
     private void initToolbar() {
-         mToolbar.setNavigationIcon(android.support.v7.appcompat.R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        mToolbar.setNavigationIcon(android.support.v7.appcompat.R.drawable.abc_ic_ab_back_mtrl_am_alpha);
         mToolbar.setTitle("");
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +90,7 @@ public abstract class BackActivity extends BaseActivity {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.replace(R.id.content_frame, fragment);
-        ft.setCustomAnimations(R.anim.fragment_fade_enter, R.anim.fragment_fade_exit);
+//      ft.setCustomAnimations(R.anim.fragment_fade_enter, R.anim.fragment_fade_exit);
         ft.commit();
     }
 

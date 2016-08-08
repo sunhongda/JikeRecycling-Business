@@ -1,5 +1,4 @@
 package com.angm.jikeb.fragment;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -7,9 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-
 import com.angm.jikeb.R;
-
 import butterknife.Bind;
 
 /**
@@ -17,10 +14,7 @@ import butterknife.Bind;
  * 意见反馈Fragment
  */
 public class FeedbackFragment extends LevelTwoFragment {
-
-
     MenuItem item;
-
     @Bind(R.id.feedback_suggestion_edittext)
     EditText et;
 
@@ -54,7 +48,6 @@ public class FeedbackFragment extends LevelTwoFragment {
             }
         });*/
     }
-
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -64,8 +57,9 @@ public class FeedbackFragment extends LevelTwoFragment {
         InputMethodManager mImm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         mImm.hideSoftInputFromWindow(et.getWindowToken(), 0);
     }
-/*
 
+
+/*
     class FeedBackRequestCallBack extends RequestCallBack<String> {
 
         @Override

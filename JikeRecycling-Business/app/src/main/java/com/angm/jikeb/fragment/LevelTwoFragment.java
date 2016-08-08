@@ -9,11 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.angm.jikeb.R;
 import com.angm.jikeb.base.BackActivity;
 
 import butterknife.ButterKnife;
-
-
 /**
  * Created by Administrator on 2015/10/12.
  * 带返回箭头的fragment
@@ -30,7 +29,6 @@ public abstract class LevelTwoFragment extends Fragment {
         super.onAttach(activity);
         mActivity = (BackActivity) activity;
         mToolbar = mActivity.getmToolbar();
-
 
     }
 
@@ -53,7 +51,9 @@ public abstract class LevelTwoFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+
         mToolbar.setTitle(getTitle());
+        mToolbar.setNavigationIcon(R.mipmap.back);
     }
 
     abstract public String getTitle();

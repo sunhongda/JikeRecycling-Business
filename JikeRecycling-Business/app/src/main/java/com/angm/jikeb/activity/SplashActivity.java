@@ -12,24 +12,16 @@ import butterknife.Bind;
 /**
  * Created by shd on 16-8-1.
  * 引导界面  Activity
- * @
  */
 public class SplashActivity extends BaseActivity {
-
-
     @Bind(R.id.version_name)
     TextView versionName;
-
-
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
     }
-
-
     @Override
     public int getLayout() {
-
         return R.layout.activity_splash;
     }
 

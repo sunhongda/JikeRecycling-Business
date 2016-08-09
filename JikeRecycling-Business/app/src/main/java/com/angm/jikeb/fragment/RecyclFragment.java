@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -29,10 +28,10 @@ public class RecyclFragment extends BaseFragment {
     RecyclerView rvMain;
     @Bind(R.id.sr_layout)
     SwipeRefreshLayout srLayout;
-    @Bind(R.id.tv_empty)
+/*    @Bind(R.id.tv_empty)
     TextView tvEmpty;
     @Bind(R.id.no_trip)
-    LinearLayout noTrip;
+    LinearLayout noTrip;*/
     @Bind(R.id.progressbar)
     ProgressBar progressbar;
 

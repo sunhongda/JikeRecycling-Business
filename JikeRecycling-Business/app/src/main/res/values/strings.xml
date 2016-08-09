@@ -3,4 +3,12 @@
     <!--activityMain -->
     <string name="tv_main_home">首頁</string>
 
+   <!--Recyc fragment -->
+    <string name="first_online">在线:</string>
+    <string name="first_get">接单:</string>
+    <string name="first_water">流水:</string>
+    <string name="first_done">成绩率:</string>
+
+
+
 </resources>

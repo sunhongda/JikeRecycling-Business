@@ -76,6 +76,7 @@ public class RecyclFragment extends BaseFragment {
      * 初始化RecycView 可用于（listview griadView等）
      */
     private void initRecyclView() {
+
         rvMain.setLayoutManager(new LinearLayoutManager(activity));
         rvMain.setAdapter(new MyRecycAdapter());
         //设置Item增加、移除动画

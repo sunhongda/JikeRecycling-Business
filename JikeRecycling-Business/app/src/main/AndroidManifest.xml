@@ -34,6 +34,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
+
         <activity
             android:name=".activity.SignInActivity"
             android:label="登录"

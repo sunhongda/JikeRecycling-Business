@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.angm.jikeb.activity.MainActivity;
+
 import butterknife.ButterKnife;
 
 /**
@@ -18,13 +20,13 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseFragment extends Fragment {
 
-    public BaseActivity activity;
+    public MainActivity activity;
     private View view;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        this.activity = (BaseActivity) activity;
+        this.activity = (MainActivity) activity;
     }
 
     @Nullable

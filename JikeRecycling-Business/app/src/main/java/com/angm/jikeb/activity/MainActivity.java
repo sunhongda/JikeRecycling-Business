@@ -48,7 +48,13 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        String fragmentName = getIntent().getStringExtra("fragmentName");
+        Bundle bundle = getIntent().getBundleExtra("fragmentBundle");
+        initToolbar();
+
     }
+
 
     @Override
     public int getLayout() {
@@ -73,18 +79,9 @@ public class MainActivity extends BaseActivity {
     }
 
 
-    public void startFragment(Class<?> activity, Class<?> fragment, Intent intent) {
-        if (intent == null) {
-            intent = new Intent();
-        }
-        intent.putExtra("fragmentName", fragment.getName());
-        intent.setClass(this, activity);
-        startActivity(intent);
-    }
 
-    public void startFragment(Class<?> activity, Class<?> fragment) {
-        startFragment(activity, fragment, null);
-    }
+
+
 
     private void initToolbar() {
         toolbarTop.setTitle("");
@@ -175,6 +172,7 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+
     /**
      * 再按一次退出
      */
@@ -195,4 +193,6 @@ public class MainActivity extends BaseActivity {
             }, 2000);
         }
     }
+
+
 }

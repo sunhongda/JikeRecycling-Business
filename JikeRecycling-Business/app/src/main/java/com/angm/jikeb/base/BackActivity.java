@@ -24,24 +24,23 @@ import butterknife.Bind;
 public class BackActivity extends BaseActivity {
 
 
+    public MyApplication app;
+    public ProgressDialog dialog;
     @Bind(R.id.tv_toolbar_center)
-    TextView tvToolbarCenter;
+    public TextView tvToolbarCenter;
     @Bind(R.id.toolbarTop)
     Toolbar mToolbar;
     @Bind(R.id.content_frame)
     FrameLayout contentFrame;
-    public MyApplication app;
-    public ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public int getLayout() {
-        return R.layout.activtiy_test;
+        return R.layout.activity_back;
     }
 
     @Override
@@ -59,6 +58,8 @@ public class BackActivity extends BaseActivity {
         String fragmentName = getIntent().getStringExtra("fragmentName");
         Bundle bundle = getIntent().getBundleExtra("fragmentBundle");
         initToolbar();
+
+
         try {
             if (!TextUtils.isEmpty(fragmentName) && !TextUtils.isEmpty(fragmentName)) {
                 initFragment(fragmentName, bundle);
@@ -73,7 +74,7 @@ public class BackActivity extends BaseActivity {
     }
 
     private void initToolbar() {
-        mToolbar.setNavigationIcon(android.support.v7.appcompat.R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        mToolbar.setNavigationIcon(R.mipmap.back);
         mToolbar.setTitle("");
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +82,13 @@ public class BackActivity extends BaseActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mToolbar.setTitle("");
+        mToolbar.setNavigationIcon(R.mipmap.back);
     }
 
     private void initFragment(String name, Bundle bundle) throws ClassNotFoundException, IllegalAccessException, InstantiationException {

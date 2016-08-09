@@ -1,35 +1,23 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbarTop"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/toolbar_xml"
-    android:orientation="vertical">
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true"
+    android:minHeight="?attr/actionBarSize"
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+    android:theme="@style/ToolbarTheme">
+
+    <TextView
+        android:id="@+id/tv_toolbar_center"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ToolbarTheme"
-        app:popupTheme="@style/ToolbarTheme"
-
-        android:fitsSystemWindows="true" >
-        <TextView
-            android:id="@+id/tv_toolbar_center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:text="www. .com"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:text="www. .com"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
-    </android.support.v7.widget.Toolbar>
-
-
-    <!--<include layout="@layout/divider"/>-->
-
-</LinearLayout>
+</android.support.v7.widget.Toolbar>

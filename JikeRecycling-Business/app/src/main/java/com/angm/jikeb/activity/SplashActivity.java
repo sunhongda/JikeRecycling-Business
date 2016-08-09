@@ -2,7 +2,7 @@ package com.angm.jikeb.activity;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.widget.TextView;
+import android.support.v4.view.ViewPager;
 
 import com.angm.jikeb.R;
 import com.angm.jikeb.base.BaseActivity;
@@ -14,12 +14,15 @@ import butterknife.Bind;
  * 引导界面  Activity
  */
 public class SplashActivity extends BaseActivity {
-    @Bind(R.id.version_name)
-    TextView versionName;
+
+    @Bind(R.id.vp_splash)
+    ViewPager vpSplash;
+
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
     }
+
     @Override
     public int getLayout() {
         return R.layout.activity_splash;
@@ -35,10 +38,9 @@ public class SplashActivity extends BaseActivity {
 
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
-     }
+    }
 }

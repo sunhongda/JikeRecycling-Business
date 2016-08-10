@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.widget.CheckBox;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
@@ -32,14 +32,14 @@ public class MainActivity extends BaseActivity {
 
     @Bind(R.id.toolbar_main_activity)
     Toolbar toolbarTop;
-    @Bind(R.id.ordercontrol)
-    CheckBox ordercontrol;
     @Bind(R.id.content_frame)
     FrameLayout contentFrame;
     @Bind(R.id.main_rl)
     RelativeLayout mainRl;
     @Bind(R.id.vp_main)
     ViewPager mPager;
+    @Bind(R.id.order_control)
+    Button orderControl;
     private boolean isWarnedToClose = false;
     private AMap mMap;
 

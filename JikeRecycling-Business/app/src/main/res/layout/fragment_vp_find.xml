@@ -1,44 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/back_color_f9"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/rl_find1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="25dp"
-            android:padding="5dp">
+            android:layout_width="170px"
+            android:layout_height="170px"
+            android:layout_marginLeft="70px"
+            android:layout_marginTop="50px"
+            android:background="@color/back_color_ff"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10px">
 
             <ImageView
                 android:id="@+id/iv_1"
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/prize" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@mipmap/message" />
-        </RelativeLayout>
+                android:layout_marginTop="10px"
+                android:text="奖励活动"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_view_25" />
+        </com.zhy.autolayout.AutoLinearLayout>
 
-        <RelativeLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/rl_find2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="25dp"
+            android:layout_width="170px"
+            android:layout_height="170px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="50px"
             android:layout_toRightOf="@id/rl_find1"
-            android:padding="5dp">
+            android:background="@color/back_color_ff"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10px">
 
             <ImageView
                 android:id="@+id/iv_2"
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/service" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@mipmap/message" />
-        </RelativeLayout>
+                android:layout_marginTop="10px"
+                android:text="服务中心"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_view_25" />
+        </com.zhy.autolayout.AutoLinearLayout>
 
 
-    </RelativeLayout>
-</LinearLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
+</com.zhy.autolayout.AutoLinearLayout>

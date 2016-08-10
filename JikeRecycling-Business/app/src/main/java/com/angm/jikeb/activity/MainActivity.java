@@ -11,8 +11,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 
 import com.amap.api.maps.AMap;
 import com.angm.jikeb.R;
@@ -22,6 +20,8 @@ import com.angm.jikeb.fragment.FindFragment;
 import com.angm.jikeb.fragment.HomeFragment;
 import com.angm.jikeb.fragment.RecyclFragment;
 import com.angm.jikeb.view.Indicator.SlidingTabLayout;
+import com.zhy.autolayout.AutoFrameLayout;
+import com.zhy.autolayout.AutoRelativeLayout;
 
 import java.util.ArrayList;
 
@@ -32,14 +32,16 @@ public class MainActivity extends BaseActivity {
 
     @Bind(R.id.toolbar_main_activity)
     Toolbar toolbarTop;
-    @Bind(R.id.content_frame)
-    FrameLayout contentFrame;
-    @Bind(R.id.main_rl)
-    RelativeLayout mainRl;
     @Bind(R.id.vp_main)
     ViewPager mPager;
+    @Bind(R.id.sliding_tabs)
+    SlidingTabLayout slidingTabs;
     @Bind(R.id.order_control)
     Button orderControl;
+    @Bind(R.id.content_frame)
+    AutoFrameLayout contentFrame;
+    @Bind(R.id.main_rl)
+    AutoRelativeLayout mainRl;
     private boolean isWarnedToClose = false;
     private AMap mMap;
 

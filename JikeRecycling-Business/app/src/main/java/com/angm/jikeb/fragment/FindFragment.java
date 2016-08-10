@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import com.angm.jikeb.R;
 import com.angm.jikeb.base.BackActivity;
 import com.angm.jikeb.base.BaseFragment;
 import com.angm.jikeb.util.Log;
+import com.zhy.autolayout.AutoLinearLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -23,15 +23,15 @@ import butterknife.OnClick;
  */
 public class FindFragment extends BaseFragment {
 
+
     @Bind(R.id.iv_1)
     ImageView iv1;
     @Bind(R.id.rl_find1)
-    RelativeLayout rlFind1;
+    AutoLinearLayout rlFind1;
     @Bind(R.id.iv_2)
     ImageView iv2;
     @Bind(R.id.rl_find2)
-    RelativeLayout rlFind2;
-
+    AutoLinearLayout rlFind2;
 
     @Nullable
     @Override
@@ -61,12 +61,12 @@ public class FindFragment extends BaseFragment {
         switch (v.getId()) {
             case R.id.rl_find1:
                 Log.i("   OnClick rl_find1");
-                activity.startFragment(BackActivity.class,MapFragment.class);
+                activity.startFragment(BackActivity.class, MapFragment.class);
                 break;
 
             case R.id.rl_find2:
                 Log.i("   OnClick rl_find2");
-
+                activity.startFragment(BackActivity.class,ServiceFragment.class);
                 break;
 
             default:

@@ -9,7 +9,12 @@
     <color name="green_p">#279f00</color>
     <color name="back_color_f9">#F9F9F9</color>
     <color name="back_color_ff">#FFFFFF</color>
+    <color name="back_color_f5">#F5F5F5</color>
     <color name="text_color_black">#000</color>
     <color name="text_color_hui">#7D7D7D</color>
+    <color name="text_color_white">#FFFFFF</color>
+    <color name="text_color_hui2">#CCCCCC</color>
+    <color name="text_color_lan">#2CA8E4</color>
+    <color name="text_color_cheng">#FE8100</color>
 
 </resources>

@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0EFF5"
+    android:background="@color/back_color_f9"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/feedback_suggestion_edittext"
+    <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/edittext_order_style"
-        android:gravity="top"
-        android:maxLength="140"
-        android:hint="请输入反馈意见，我们将不断为您改进" />
+        android:layout_height="300px"
+        android:layout_marginTop="20px"
+        android:background="@color/back_color_ff">
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/feedback_suggestion_edittext"
+            android:layout_marginTop="20px"
+            android:layout_width="match_parent"
+            android:layout_height="300px"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            android:background="@drawable/edittext_order_style"
+            android:gravity="top"
+            android:hint="请输入反馈意见，我们将不断为您改进"
+            android:maxLength="140" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="70px"
+        android:background="@color/text_color_cheng"
+        android:text="提交反馈"
+        android:textColor="@color/text_color_white"
+        android:textSize="@dimen/text_view_30" />
+
+</com.zhy.autolayout.AutoLinearLayout>

@@ -63,7 +63,7 @@ public class RecyclFragment extends BaseFragment {
                 R.color.colorPrimary,
                 R.color.colorPrimaryDark);
         srLayout.setSize(SwipeRefreshLayout.LARGE);
-        srLayout.setProgressViewEndTarget(true, 100);
+        srLayout.setProgressViewEndTarget(true, 160);
         srLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/fragment_money_data_yue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="100px"
+            android:text="钱包余额"
+            android:textColor="@color/text_color_white"
+            android:textSize="@dimen/text_view_25" />
+
+        <TextView
+            android:id="@+id/fragment_money_data_fu_hao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_money_data_yue"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="70px"
+            android:text="￥"
+            android:textColor="@color/text_color_white"
+            android:textSize="@dimen/text_view_40" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/fragment_money_data_fu_hao"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="40px"
+            android:layout_toRightOf="@+id/fragment_money_data_fu_hao"
+            android:text="0.00"
+            android:textColor="@color/text_color_white"
+            android:textSize="70px" />
+
+        <ImageView
+            android:layout_width="30px"
+            android:layout_height="30px"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/fragment_money_data_fu_hao"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/go_white" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="余额提现功能仅对认证用户开放，立即认证Go"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_25" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+</com.zhy.autolayout.AutoLinearLayout>

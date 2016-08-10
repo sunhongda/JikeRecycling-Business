@@ -30,9 +30,9 @@
         <activity
             android:name=".base.BackActivity"
             android:label=""
-            android:windowSoftInputMode="stateHidden|adjustPan"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
 
         <activity
@@ -52,17 +52,22 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
+        <meta-data
+            android:name="design_width"
+            android:value="768"></meta-data>
+        <meta-data
+            android:name="design_height"
+            android:value="1280"></meta-data>
+        <!--高德地图需要配置-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="b67fde868e656d723f2171bf4283f36f"></meta-data>
+        <service android:name="com.amap.api.location.APSService"></service>
     </application>
 
-
-    <!--高德地图需要配置-->
-    <meta-data
-        android:name="com.amap.api.v2.apikey"
-        android:value="您的key" />
-
-    <service android:name="com.amap.api.location.APSService"></service>
-
-
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -71,5 +76,7 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    //定位包、导航包需要的额外权限（注：基础权限也需要）
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 </manifest>

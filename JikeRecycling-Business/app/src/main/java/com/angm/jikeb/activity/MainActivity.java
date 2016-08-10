@@ -1,7 +1,6 @@
 package com.angm.jikeb.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,14 +32,14 @@ public class MainActivity extends BaseActivity {
 
     @Bind(R.id.toolbar_main_activity)
     Toolbar toolbarTop;
-    @Bind(R.id.vp_main)
-    ViewPager mPager;
     @Bind(R.id.ordercontrol)
     CheckBox ordercontrol;
     @Bind(R.id.content_frame)
     FrameLayout contentFrame;
     @Bind(R.id.main_rl)
     RelativeLayout mainRl;
+    @Bind(R.id.vp_main)
+    ViewPager mPager;
     private boolean isWarnedToClose = false;
     private AMap mMap;
 
@@ -77,10 +76,6 @@ public class MainActivity extends BaseActivity {
     public Toolbar getmToolbar() {
         return toolbarTop;
     }
-
-
-
-
 
 
     private void initToolbar() {

@@ -12,4 +12,13 @@
 
     <dimen name="toolbar_elevation">2dp</dimen>
 
+    <dimen name="text_view_10">10px</dimen>
+    <dimen name="text_view_15">15px</dimen>
+    <dimen name="text_view_20">20px</dimen>
+    <dimen name="text_view_25">25px</dimen>
+    <dimen name="text_view_30">30px</dimen>
+    <dimen name="text_view_35">35px</dimen>
+    <dimen name="text_view_40">40px</dimen>
+
+
 </resources>

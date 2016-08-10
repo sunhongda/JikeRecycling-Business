@@ -27,17 +27,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.yolanda.nohttp:nohttp:+'
-    compile "com.daimajia.swipelayout:library:1.2.0@aar"
+    compile 'com.daimajia.swipelayout:library:1.2.0@aar'
     compile 'com.android.support:design:23.1.0'
-     compile 'com.android.support:cardview-v7:23.1.0'
+    compile 'com.android.support:cardview-v7:23.1.0'
     compile 'com.android.support:percent:23.1.0'
     compile 'com.android.support:recyclerview-v7:23.1.0'
-
-
-
+    compile 'com.zhy:autolayout:1.4.3'
+    compile files('libs/Amap_Android_IndoorMap_v1.0_20151023.jar')
 }

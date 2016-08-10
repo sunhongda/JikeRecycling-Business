@@ -7,5 +7,9 @@
 
     <color name="green">#2ed964</color>
     <color name="green_p">#279f00</color>
+    <color name="back_color_f9">#F9F9F9</color>
+    <color name="back_color_ff">#FFFFFF</color>
+    <color name="text_color_black">#000</color>
+    <color name="text_color_hui">#7D7D7D</color>
 
 </resources>

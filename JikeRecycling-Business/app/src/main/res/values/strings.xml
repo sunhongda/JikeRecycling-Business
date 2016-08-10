@@ -9,6 +9,10 @@
     <string name="first_water">流水:</string>
     <string name="first_done">成绩率:</string>
 
+    <string name="home_money">钱包</string>
+    <string name="home_message">消息中心</string>
+    <string name="home_setting">设置</string>
+
 
 
 </resources>

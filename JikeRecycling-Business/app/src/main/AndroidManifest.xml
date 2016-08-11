@@ -10,13 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.angm.jikeb.activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name="com.angm.jikeb.activity.MainActivity"></activity>
 
 
         <activity android:name="com.angm.jikeb.activity.TestActivity">
@@ -39,7 +33,13 @@
             android:name=".activity.SignInActivity"
             android:label="登录"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.SignUpActivity"
             android:label="注册"

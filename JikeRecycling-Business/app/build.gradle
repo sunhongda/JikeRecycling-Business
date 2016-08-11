@@ -39,4 +39,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.1.0'
     compile 'com.zhy:autolayout:1.4.3'
     compile files('libs/Amap_Android_IndoorMap_v1.0_20151023.jar')
+    compile files('libs/sun.misc.BASE64Decoder.jar')
 }

@@ -1,11 +1,13 @@
-<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".activity.SignInActivity">
 
     <include
         android:id="@+id/toolbar_signin_activity"
-        layout="@layout/home_toolbar" />
+        layout="@layout/toolbar" />
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
@@ -127,4 +129,4 @@
 
     </com.zhy.autolayout.AutoLinearLayout>
 
-</com.zhy.autolayout.AutoRelativeLayout>
+</com.zhy.autolayout.AutoLinearLayout>

@@ -80,4 +80,7 @@ public class Log {
 	}
 
 
+	public static void error(Class<SignUtil> signUtilClass, String s) {
+
+	}
 }

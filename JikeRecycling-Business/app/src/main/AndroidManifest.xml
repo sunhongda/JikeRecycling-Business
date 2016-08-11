@@ -2,69 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.angm.jikeb">
 
-    <application
-        android:name=".manager.MyApplication"
-        android:allowBackup="true"
-        android:icon="@mipmap/logo2"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-        <activity android:name="com.angm.jikeb.activity.MainActivity"></activity>
-
-
-        <activity android:name="com.angm.jikeb.activity.TestActivity">
-            <!-- <intent-filter>
-                     <action android:name="android.intent.action.MAIN" />
-
-                     <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>-->
-        </activity>
-
-        <activity
-            android:name=".base.BackActivity"
-            android:label=""
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="stateHidden|adjustPan" />
-
-
-        <activity
-            android:name=".activity.SignInActivity"
-            android:label="登录"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".activity.SignUpActivity"
-            android:label="注册"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-
-        <activity
-            android:name=".activity.SplashActivity"
-            android:label="注册"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-
-        <meta-data
-            android:name="design_width"
-            android:value="768"></meta-data>
-        <meta-data
-            android:name="design_height"
-            android:value="1280"></meta-data>
-        <!--高德地图需要配置-->
-        <meta-data
-            android:name="com.amap.api.v2.apikey"
-            android:value="b67fde868e656d723f2171bf4283f36f"></meta-data>
-        <service android:name="com.amap.api.location.APSService"></service>
-    </application>
-
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -79,4 +16,67 @@
     //定位包、导航包需要的额外权限（注：基础权限也需要）
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <application
+        android:name=".manager.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo2"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.TestActivity">
+
+            <!--
+                 <intent-filter>
+                     <action android:name="android.intent.action.MAIN" />
+
+                     <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            -->
+        </activity>
+        <!--导航界面-->
+        <activity android:name=".activity.NavigationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".base.BackActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".activity.SignInActivity"
+            android:label="登录"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:label="注册"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:label="注册"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="design_width"
+            android:value="768" />
+        <meta-data
+            android:name="design_height"
+            android:value="1280" />
+        <!-- 高德地图需要配置 -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="b67fde868e656d723f2171bf4283f36f" />
+
+        <service android:name="com.amap.api.location.APSService" />
+    </application>
 </manifest>

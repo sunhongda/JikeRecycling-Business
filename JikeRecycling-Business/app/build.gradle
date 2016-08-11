@@ -40,4 +40,8 @@ dependencies {
     compile 'com.zhy:autolayout:1.4.3'
     compile files('libs/Amap_Android_IndoorMap_v1.0_20151023.jar')
     compile files('libs/sun.misc.BASE64Decoder.jar')
+    compile files('libs/okhttp-2.7.5.jar')
+    compile files('libs/okio-1.7.0.jar')
+    compile files('libs/image-loader-1.9.3.jar')
+    compile project(':library')
 }

@@ -42,7 +42,7 @@
                 android:inputType="phone"
                 android:maxLength="11"
                 android:singleLine="true"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_view_30" />
         </com.zhy.autolayout.AutoLinearLayout>
 
         <View
@@ -73,9 +73,9 @@
                 android:layout_marginRight="10px"
                 android:background="#0000"
                 android:hint="请输入您的密码"
-                android:inputType="number"
-                android:maxLength="4"
-                android:textSize="16sp" />
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:textSize="@dimen/text_view_30" />
         </com.zhy.autolayout.AutoLinearLayout>
 
         <View
@@ -92,9 +92,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="30px"
-                android:layout_marginTop="10px"
+                android:layout_marginTop="20px"
                 android:text="忘记密码"
-                android:textColor="@color/text_color_hui"
+                android:clickable="true"
+                android:textColor="@drawable/selector_text_color"
                 android:textSize="@dimen/text_view_25" />
         </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -121,7 +122,6 @@
             android:layout_marginLeft="30px"
             android:layout_marginRight="40px"
             android:layout_marginTop="30px"
-            android:enabled="false"
             android:text="立即登录"
             android:textColor="@color/text_color_white"
             android:background="@color/text_color_cheng"

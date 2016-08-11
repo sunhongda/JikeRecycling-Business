@@ -3,7 +3,7 @@
     <!--activityMain -->
     <string name="tv_main_home">首頁</string>
 
-   <!--Recyc fragment -->
+    <!--Recyc fragment -->
     <string name="first_online">在线:</string>
     <string name="first_get">接单:</string>
     <string name="first_water">流水:</string>
@@ -13,6 +13,13 @@
     <string name="home_message">消息中心</string>
     <string name="home_setting">设置</string>
 
+    <string name="sign_in_mobile">手机号不得为空</string>
+    <string name="sign_in_number_count">手机号为11位数字</string>
+    <string name="sign_in_pwd">密码不得为空</string>
+    <string name="sign_in_pwd_count">密码应为6-20位</string>
+    <string name="sign_in_check">请遵守协议</string>
+    <string name="sign_in_success">Success</string>
+    <string name="sign_in_mobile_format">请检查手机号</string>
 
 
 </resources>

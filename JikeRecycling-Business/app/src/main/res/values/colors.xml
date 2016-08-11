@@ -16,5 +16,6 @@
     <color name="text_color_hui2">#CCCCCC</color>
     <color name="text_color_lan">#2CA8E4</color>
     <color name="text_color_cheng">#FE8100</color>
+    <color name="text_color_red">#F00</color>
 
 </resources>

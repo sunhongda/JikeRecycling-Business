@@ -78,4 +78,6 @@ public class Log {
 			android.util.Log.w(tag, String.format(msg, args));
 		}
 	}
+
+
 }

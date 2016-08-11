@@ -38,7 +38,7 @@
             android:layout_toLeftOf="@+id/fragment_person_data_go"
             android:src="@mipmap/person" />
     </com.zhy.autolayout.AutoRelativeLayout>
-
+<!--姓名-->
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100px"
@@ -60,7 +60,8 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="30px"
             android:text="土地公公"
-            android:textSize="@dimen/text_view_30" />
+            android:textSize="@dimen/text_view_30"
+            />
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoRelativeLayout

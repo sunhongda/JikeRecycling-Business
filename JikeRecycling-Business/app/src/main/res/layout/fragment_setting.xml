@@ -88,6 +88,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <Button
+            android:id="@+id/fragment_setting_back_login"
             android:layout_width="match_parent"
             android:layout_height="100px"
             android:text="退出登录"

@@ -107,7 +107,7 @@ public class MainActivity extends BaseActivity {
 
         //给ViewPager设置适配器
         mPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentList, this));
-        mPager.setCurrentItem(0);//设置当前显示标签页为第一页
+        mPager.setCurrentItem(1);//设置当前显示标签页为第一页
         mPager.setOnPageChangeListener(new MyOnPageChangeListener());//页面变化时的监听器
     }
 

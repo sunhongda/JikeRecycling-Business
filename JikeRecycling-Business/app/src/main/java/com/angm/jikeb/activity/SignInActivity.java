@@ -1,5 +1,6 @@
 package com.angm.jikeb.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
@@ -86,8 +87,10 @@ public class SignInActivity extends BaseActivity {
                                     public void response(String result) {
                                         android.util.Log.d("zzz", "result+" + result);
                                         Alert.mProgressDialog.dismiss();
+                                        startActivity(new Intent(SignInActivity.this,MainActivity.class));
+                                        finish();
                                     }
-                                }).POST_DATA(sign, map);
+                                }).POST_DATA(path, map);
                             }
                         }
                     }

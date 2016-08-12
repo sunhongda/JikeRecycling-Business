@@ -8,7 +8,7 @@ import com.angm.jikeb.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
-
+/*欢迎页*/
 public class WelComeActivity extends AppCompatActivity {
     private Timer mTimer = null;
 
@@ -25,6 +25,6 @@ public class WelComeActivity extends AppCompatActivity {
                 startActivity(new Intent(WelComeActivity.this, SignInActivity.class));
                 finish();
             }
-        }, 3000);
+        }, 2000);
     }
 }

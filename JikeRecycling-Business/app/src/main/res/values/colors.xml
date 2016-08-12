@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#2DA9E5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="default_font_color_cff">#ffffff</color>
 
-    <color name="green">#2ed964</color>
-    <color name="green_p">#279f00</color>
+    <color name="green">#2DA9E5</color>
+    <color name="green_p">#303F9F</color>
     <color name="back_color_f9">#F9F9F9</color>
     <color name="back_color_ff">#FFFFFF</color>
     <color name="back_color_f5">#F5F5F5</color>
@@ -17,5 +17,14 @@
     <color name="text_color_lan">#2CA8E4</color>
     <color name="text_color_cheng">#FE8100</color>
     <color name="text_color_red">#F00</color>
+
+    <color name="sub_btn_background">#424a52</color>
+    <color name="sub_btn_line">#00c68c</color>
+    <color name="sub_btn_ripple">#eff0f2</color>
+    <color name="sub_btn_tick">#eff0f2</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#627676</color>
+    <color name="yellow">#eef26c</color>
+    <color name="black">#000000</color>
 
 </resources>

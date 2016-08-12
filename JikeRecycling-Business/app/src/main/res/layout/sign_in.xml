@@ -89,7 +89,7 @@
             android:layout_height="50px">
 
             <TextView
-                android:id="@+id/tv_forget_pwd"
+                android:id="@+id/tv_forget_forgot_pwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -97,6 +97,18 @@
                 android:layout_marginTop="20px"
                 android:clickable="true"
                 android:text="忘记密码"
+                android:textColor="@drawable/selector_text_color"
+                android:textSize="@dimen/text_view_25" />
+
+            <TextView
+                android:id="@+id/tv_forget_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tv_forget_forgot_pwd"
+                android:layout_marginRight="30px"
+                android:layout_marginTop="20px"
+                android:clickable="true"
+                android:text="注册账号"
                 android:textColor="@drawable/selector_text_color"
                 android:textSize="@dimen/text_view_25" />
         </com.zhy.autolayout.AutoRelativeLayout>

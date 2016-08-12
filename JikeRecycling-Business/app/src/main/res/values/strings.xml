@@ -16,10 +16,16 @@
     <string name="sign_in_mobile">手机号不得为空</string>
     <string name="sign_in_number_count">手机号为11位数字</string>
     <string name="sign_in_pwd">密码不得为空</string>
+    <string name="sign_in_pwd_pwd2">密码不一致</string>
     <string name="sign_in_pwd_count">密码应为6-20位</string>
+    <string name="sign_in_verify_count">验证码应为4位</string>
     <string name="sign_in_check">请遵守协议</string>
     <string name="sign_in_success">Success</string>
     <string name="sign_in_mobile_format">请检查手机号</string>
     <string name="sign_in_network">网络异常</string>
+    <string name="sign_in_verify">验证码不得为空</string>
+    <string name="sign_up_send_code">发送验证码</string>
+    <string name="sign_up_restart">重新发送</string>
+    <string name="sign_send_code_success">请查收</string>
 
 </resources>

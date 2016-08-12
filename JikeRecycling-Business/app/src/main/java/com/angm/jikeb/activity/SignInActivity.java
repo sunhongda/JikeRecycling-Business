@@ -81,7 +81,8 @@ public class SignInActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() { }
+    public void initData() {
+    }
 
     public void validation() {
         String mobile = signinMobileEdittext.getText().toString().trim();/*手机号*/
@@ -94,40 +95,42 @@ public class SignInActivity extends BaseActivity {
                 Toast.makeText(SignInActivity.this, R.string.sign_in_pwd_count, Toast.LENGTH_SHORT).show();
             } else if (!signinChechkbox.isChecked()) {
                 Toast.makeText(SignInActivity.this, R.string.sign_in_check, Toast.LENGTH_SHORT).show();
-            } else
+            } else {
                 Alert.showDialog(SignInActivity.this);
-            String[] strPath = new String[]{mobile};
-            Log.d("zzz", "strPath+" + SignUtil.getSign(strPath));
-            try {
-                encode = DesUtils.encode(mobile);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            boolean networkAvailable = MobileUtils.isNetworkAvailable(SignInActivity.this);
-            if (networkAvailable) {
-                map.put("sign", SignUtil.getSign(strPath));
-                map.put("mobile", encode);
+                String[] strPath = new String[]{mobile};
+                Log.d("zzz", "strPath+" + SignUtil.getSign(strPath));
+                try {
+                    encode = DesUtils.encode(mobile);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                boolean networkAvailable = MobileUtils.isNetworkAvailable(SignInActivity.this);
+                if (networkAvailable) {
+                    map.put("sign", SignUtil.getSign(strPath));
+                    map.put("mobile", encode);
 //                OkHttpUtils.getInstance(new OkHttpUtils.HttpCallBackListener() {
 //                    @Override
 //                    public void response(String result) {
 //                        android.util.Log.d("zzz", "result+" + result);
-                        Alert.mProgressDialog.dismiss();
-                        startActivity(new Intent(SignInActivity.this, MainActivity.class));
-                        finish();
+                    Alert.mProgressDialog.dismiss();
+                    startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                    finish();
 //                    }
 //                }).POST_DATA(path, map);
-            } else {
-                Alert.mProgressDialog.dismiss();
-                Toast.makeText(SignInActivity.this, R.string.sign_in_network, Toast.LENGTH_SHORT).show();
+                } else {
+                    Alert.mProgressDialog.dismiss();
+                    Toast.makeText(SignInActivity.this, R.string.sign_in_network, Toast.LENGTH_SHORT).show();
 
+                }
             }
         } else {
             Toast.makeText(SignInActivity.this, R.string.sign_in_mobile_format, Toast.LENGTH_SHORT).show();
 
         }
     }
-
 }
+
+
 
 
 

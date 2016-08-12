@@ -1,10 +1,12 @@
 package com.angm.jikeb.activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -86,20 +88,30 @@ public class SignInActivity extends BaseActivity {
                                 Toast.makeText(SignInActivity.this, R.string.sign_in_check, Toast.LENGTH_SHORT).show();
                             } else {
                                 Alert.showDialog(SignInActivity.this);
-                                String encryMobile = EncryptUtil.getEncryptString(mobile);
                                 /*签名*/
-                                String[] strPath = new String[]{path};
-                                String sign = SignUtil.getSign(strPath);
-                                map.put("mobile", encryMobile);
-                                OkHttpUtils.getInstance(new OkHttpUtils.HttpCallBackListener() {
-                                    @Override
-                                    public void response(String result) {
-                                        Log.d("zzz", "result+" + result);
-                                        Alert.mProgressDialog.dismiss();
-                                        startActivity(new Intent(SignInActivity.this, MainActivity.class));
-                                        finish();
-                                    }
-                                }).POST_DATA(path, map);
+                                String[] strPath = new String[]{mobile};
+                                android.util.Log.d("zzz", "strPath+" + SignUtil.getSign(strPath));
+                                String encryptmobile = EncryptUtil.getEncryptString(mobile);
+                                  /*判断网络状态*/
+                                boolean networkAvailable = isNetworkAvailable(SignInActivity.this);
+                                if (networkAvailable) {
+                                    map.put("sign",SignUtil.getSign(strPath));
+                                    
+                                    map.put("mobile",EncryptUtil.getEncryptString(mobile));
+                                    android.util.Log.d("zzz", "mobile+" + encryptmobile);
+                                    OkHttpUtils.getInstance(new OkHttpUtils.HttpCallBackListener() {
+                                        @Override
+                                        public void response(String result) {
+                                            android.util.Log.d("zzz", "result+" + result);
+                                            Alert.mProgressDialog.dismiss();
+                                            startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                                            finish();
+                                        }
+                                    }).POST_DATA(path, map);
+                                } else {
+                                    Alert.mProgressDialog.dismiss();
+                                    Toast.makeText(SignInActivity.this, R.string.sign_in_network, Toast.LENGTH_SHORT).show();
+                                }
                             }
                         }
                     }
@@ -112,7 +124,8 @@ public class SignInActivity extends BaseActivity {
         signinTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SignInActivity.this, MainActivity.class));finish();
+                startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                finish();
             }
         });
     }
@@ -130,6 +143,29 @@ public class SignInActivity extends BaseActivity {
         String telRegex = "[1][358]\\d{9}";//"[1]"代表第1位为数字1，"[358]"代表第二位可以为3、5、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
         if (TextUtils.isEmpty(mobiles)) return false;
         else return mobiles.matches(telRegex);
+    }
+    /*判断当前网络是否可用*/
+
+    /**
+     * 检测当的网络（WLAN、3G/2G）状态
+     *
+     * @param context Context
+     * @return true 表示网络可用
+     */
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager connectivity = (ConnectivityManager) context
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivity != null) {
+            NetworkInfo info = connectivity.getActiveNetworkInfo();
+            if (info != null && info.isConnected()) {
+                // 当前网络是连接的
+                if (info.getState() == NetworkInfo.State.CONNECTED) {
+                    // 当前所连接的网络可用
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
 

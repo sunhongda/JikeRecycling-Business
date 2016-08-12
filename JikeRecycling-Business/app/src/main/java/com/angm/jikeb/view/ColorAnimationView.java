@@ -1,4 +1,4 @@
-package cn.taurusxi.guidebackgroundcoloranimation.library;
+package com.angm.jikeb.view;
 
 import android.animation.Animator;
 import android.animation.ArgbEvaluator;
@@ -8,6 +8,7 @@ import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
+
 /**
  * Created by TaurusXi on 2014/5/20.
  */

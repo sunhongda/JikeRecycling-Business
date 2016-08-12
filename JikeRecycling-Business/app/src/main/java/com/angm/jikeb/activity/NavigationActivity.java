@@ -21,10 +21,11 @@ import android.widget.ImageView;
 
 import com.angm.jikeb.R;
 
-import cn.taurusxi.guidebackgroundcoloranimation.library.ColorAnimationView;
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class NavigationActivity extends AppCompatActivity {
-    private static final int[] resource = new int[]{R.mipmap.welcome1, R.mipmap.welcome4,
+    private static final int[] resource = new int[]{R.mipmap.welcome1, R.mipmap.welcome2,
             R.mipmap.welcome3, R.mipmap.welcome4};
     private ViewPager viewPager;
     private int currentItem;
@@ -38,20 +39,17 @@ public class NavigationActivity extends AppCompatActivity {
         preferences = getSharedPreferences("navigation", MODE_PRIVATE);
         boolean flag = preferences.getBoolean("flag", true);
         if (!flag) {
-            startActivity(new Intent(this, SignInActivity.class));
+            startActivity(new Intent(this, WelComeActivity.class));
             finish();
         }
         MyFragmentStatePager adpter = new MyFragmentStatePager(getSupportFragmentManager());
-        ColorAnimationView colorAnimationView = (ColorAnimationView) findViewById(R.id.ColorAnimationView);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(adpter);
         /*监听*/
         /*动画适配器*/
-        colorAnimationView.setmViewPager(viewPager, resource.length);
-        colorAnimationView.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
             }
 
             @Override
@@ -90,7 +88,7 @@ public class NavigationActivity extends AppCompatActivity {
                         if (currentItem == (resource.length - 1) && startX - endX > 0 && startX - endX >= (width / 4)) {
                             Log.i("zzz", "进入了触摸");
                             goToMainActivity();
-                            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
+                            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_left);
                         }
                         break;
                 }
@@ -129,6 +127,8 @@ public class NavigationActivity extends AppCompatActivity {
 
     @SuppressLint("ValidFragment")
     public class MyFragment extends Fragment {
+        @Bind(R.id.navigation_image)
+        ImageView navigationImage;
         private int position;
 
         public MyFragment(int position) {
@@ -137,9 +137,16 @@ public class NavigationActivity extends AppCompatActivity {
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            ImageView imageView = new ImageView(getActivity());
-            imageView.setImageResource(resource[position]);
-            return imageView;
+            View image = inflater.inflate(R.layout.fragment_navigation, null);
+            ButterKnife.bind(this, image);
+            navigationImage.setImageResource(resource[position]);
+            return image;
+        }
+
+        @Override
+        public void onDestroyView() {
+            super.onDestroyView();
+            ButterKnife.unbind(this);
         }
     }
 }

@@ -3,13 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.angm.jikeb.activity.NavigationActivity"
-    android:background="@color/back_color_ff">
+    tools:context="com.angm.jikeb.activity.WelComeActivity">
 
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
+    <ImageView
+        android:id="@+id/welcome_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/welcome"/>
 </RelativeLayout>

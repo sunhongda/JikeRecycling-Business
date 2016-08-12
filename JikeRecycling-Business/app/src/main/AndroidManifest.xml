@@ -35,7 +35,7 @@
                 </intent-filter>
             -->
         </activity>
-        <!--导航界面-->
+        <!-- 导航界面 -->
         <activity android:name=".activity.NavigationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,8 +53,7 @@
             android:name=".activity.SignInActivity"
             android:label="登录"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".activity.SignUpActivity"
             android:label="注册"
@@ -78,5 +77,8 @@
             android:value="b67fde868e656d723f2171bf4283f36f" />
 
         <service android:name="com.amap.api.location.APSService" />
+
+        <activity android:name=".activity.WelComeActivity"></activity>
     </application>
+
 </manifest>

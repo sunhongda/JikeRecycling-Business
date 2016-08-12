@@ -20,6 +20,6 @@
     <string name="sign_in_check">请遵守协议</string>
     <string name="sign_in_success">Success</string>
     <string name="sign_in_mobile_format">请检查手机号</string>
-
+    <string name="sign_in_network">网络异常</string>
 
 </resources>

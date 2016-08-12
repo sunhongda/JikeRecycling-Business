@@ -5,8 +5,10 @@
     <color name="colorAccent">#FF4081</color>
     <color name="default_font_color_cff">#ffffff</color>
 
-    <color name="green">#2ed964</color>
-    <color name="green_p">#279f00</color>
+    <color name="green">#2DA9E5</color>
+    <color name="green_p">#3F51B5</color>
+
+
     <color name="back_color_f9">#F9F9F9</color>
     <color name="back_color_ff">#FFFFFF</color>
     <color name="back_color_f5">#F5F5F5</color>

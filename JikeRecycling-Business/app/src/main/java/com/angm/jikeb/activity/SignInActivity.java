@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.angm.jikeb.R;
@@ -35,6 +37,13 @@ public class SignInActivity extends BaseActivity {
     EditText signinMobileEdittext;
     @Bind(R.id.signin_pwd_edittext)
     EditText signinPwdEdittext;
+    @Bind(R.id.tv_toolbar_center)
+    TextView tvToolbarCenter;
+    @Bind(R.id.tv_forget_pwd)
+    TextView tvForgetPwd;
+    @Bind(R.id.signin_test_button)
+    Button signinTestButton;
+
     private String path = "http://115.28.242.49:8080/getVerCode.do";
     private Map<String, Object> map = new HashMap<>();
 
@@ -51,7 +60,7 @@ public class SignInActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
+        tvToolbarCenter.setText("登陆");
     }
 
     private void initToolbar() {
@@ -85,9 +94,9 @@ public class SignInActivity extends BaseActivity {
                                 OkHttpUtils.getInstance(new OkHttpUtils.HttpCallBackListener() {
                                     @Override
                                     public void response(String result) {
-                                        android.util.Log.d("zzz", "result+" + result);
+                                        Log.d("zzz", "result+" + result);
                                         Alert.mProgressDialog.dismiss();
-                                        startActivity(new Intent(SignInActivity.this,MainActivity.class));
+                                        startActivity(new Intent(SignInActivity.this, MainActivity.class));
                                         finish();
                                     }
                                 }).POST_DATA(path, map);
@@ -97,6 +106,13 @@ public class SignInActivity extends BaseActivity {
                 } else {
                     Toast.makeText(SignInActivity.this, R.string.sign_in_mobile_format, Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        signinTestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignInActivity.this, MainActivity.class));finish();
             }
         });
     }

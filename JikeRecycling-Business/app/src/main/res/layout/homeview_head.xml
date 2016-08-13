@@ -1,77 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/back_color_ff"
+    android:layout_marginBottom="20px">
     <!--~ListView  表头界面-->
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/first_online"
-            android:textSize="30sp" />
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_50" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="123"
-
-            android:textSize="30sp" />
+            android:layout_marginLeft="10px"
+            android:text=" 10小时"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_50" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="40px"
             android:text="@string/first_get"
-
-            android:textSize="30sp" />
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_50" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="123"
-            android:textSize="30sp" />
+            android:layout_marginLeft="15px"
+            android:text="2"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_50" />
+    </com.zhy.autolayout.AutoLinearLayout>
 
-    </LinearLayout>
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="10px"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/first_water"
-            android:textSize="25sp" />
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_35" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="123"
-
-            android:textSize="25sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/first_get"
-
-            android:textSize="25sp" />
+            android:layout_marginLeft="20px"
+            android:text="44.60元"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_35" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="40px"
             android:text="@string/first_done"
-            android:textSize="25sp" />
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_35" />
 
-    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:text="100%"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_35" />
 
-    <ImageView
-        android:id="@+id/iv_head"
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="30px">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/homeview_iv_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ship" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

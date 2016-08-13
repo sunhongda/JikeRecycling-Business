@@ -19,7 +19,7 @@ import butterknife.Bind;
 
 /**
  * Created by shd on 16-8-3.
- * 用于 带返回按钮的activity 用于启动带箭头的fragment
+ * 用于带返回按钮的activity 用于启动带箭头的fragment
  */
 public class BackActivity extends BaseActivity {
 

@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -49,6 +50,8 @@ public class SignUpActivity extends BaseActivity {
     CheckBox signUpChechkbox;
     @Bind(R.id.tv_toolbar_center)
     TextView tvToolbarCenter;
+    @Bind(R.id.toolbarTop)
+    Toolbar toolbarTop;
 
     private String encodeMobile;
     private String encodeVerify;
@@ -81,10 +84,10 @@ public class SignUpActivity extends BaseActivity {
             }
         }
     };
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initToolbar();
     }
 
     @Override
@@ -109,7 +112,15 @@ public class SignUpActivity extends BaseActivity {
             }
         });
     }
-
+    private void initToolbar() {
+        toolbarTop.setNavigationIcon(R.mipmap.back);
+        toolbarTop.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
     public void getVerCode() {
         encryPtion();
         if (!TextUtils.isEmpty(mobile)) {
@@ -140,7 +151,6 @@ public class SignUpActivity extends BaseActivity {
             Toast.makeText(context, R.string.sign_in_mobile, Toast.LENGTH_SHORT).show();
         }
     }
-
     public void encryPtion() {
         mobile = signUpMobileEdittext.getText().toString().trim();
         verify = signUpCaptchaEdittext.getText().toString().trim();
@@ -155,7 +165,6 @@ public class SignUpActivity extends BaseActivity {
             e.printStackTrace();
         }
     }
-
     public void validation() {
         encryPtion();
         boolean mobileNO = MobileUtils.isMobileNO(mobile);
@@ -199,12 +208,10 @@ public class SignUpActivity extends BaseActivity {
             Toast.makeText(context, R.string.sign_in_mobile_format, Toast.LENGTH_SHORT).show();
         }
     }
-
     @Override
     public void initData() {
 
     }
-
     /*倒计时方法*/
     public void ShowTime() {
         new Thread() {
@@ -224,7 +231,6 @@ public class SignUpActivity extends BaseActivity {
             }
         }.start();
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

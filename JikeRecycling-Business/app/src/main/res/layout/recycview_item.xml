@@ -1,18 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20px"
+    android:layout_marginLeft="30px"
+    android:layout_marginRight="30px"
+    android:background="@color/back_color_ff"
     android:orientation="vertical">
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="350px"
+        android:background="@drawable/iforminput_bg">
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/recycler_item_time"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="15px"
+            android:text="今天:11:10"
+            android:textColor="@color/text_color_hui"
+            android:textSize="@dimen/text_view_35" />
 
-    </LinearLayout>
-</LinearLayout>
+        <TextView
+            android:id="@+id/recycler_item_purpose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/recycler_item_time"
+            android:layout_below="@+id/recycler_item_time"
+            android:layout_marginTop="20px"
+            android:text="目的地:"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_35" />
+
+        <TextView
+            android:id="@+id/recycler_item_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recycler_item_time"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@+id/recycler_item_purpose"
+            android:text="海淀区上地七街软件园南站"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_35" />
+
+        <TextView
+            android:id="@+id/recycler_item_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/recycler_item_purpose"
+            android:layout_below="@+id/recycler_item_purpose"
+            android:layout_marginTop="20px"
+            android:text="备    注:"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_35" />
+
+        <TextView
+            android:id="@+id/recycler_item_not_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recycler_item_purpose"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@+id/recycler_item_note"
+            android:text="物件较大,需大型车辆"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_35" />
+
+        <TextView
+            android:id="@+id/recycler_item_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/recycler_item_note"
+            android:layout_below="@+id/recycler_item_note"
+            android:layout_marginTop="20px"
+            android:text="距    离:"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_35" />
+
+        <TextView
+            android:id="@+id/recycler_item_distance_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recycler_item_note"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@+id/recycler_item_distance"
+            android:text="1.38公里"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_view_35" />
+
+        <TextView
+            android:id="@+id/recycler_item_view"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/recycler_item_distance_num"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="20px"
+            android:background="@color/back_color_f1" />
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_below="@+id/recycler_item_view"
+            android:layout_marginTop="10px">
+
+            <Button
+                android:layout_width="210px"
+                android:layout_height="50px"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@color/text_color_cheng"
+                android:text="抢单"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/text_view_30" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
+</com.zhy.autolayout.AutoLinearLayout>

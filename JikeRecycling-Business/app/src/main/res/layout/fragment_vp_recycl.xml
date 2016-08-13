@@ -1,50 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/back_color_f9"
+    android:orientation="vertical">
+
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/sr_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginTop="30px">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_main"
+        <com.zhy.autolayout.AutoFrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:splitMotionEvents="false" />
+            android:layout_height="wrap_content">
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:splitMotionEvents="false" />
+
+            <com.angm.jikeb.view.RecyclerViewHeader
+                android:id="@+id/my_recycler_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top">
+
+                <include layout="@layout/homeview_head" />
+            </com.angm.jikeb.view.RecyclerViewHeader>
+        </com.zhy.autolayout.AutoFrameLayout>
     </android.support.v4.widget.SwipeRefreshLayout>
-
-    <LinearLayout
-        android:id="@+id/no_trip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="fitCenter"
-            android:tint="#ababab" />
-
-        <TextView
-            android:id="@+id/tv_empty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="暂无内容" />
-    </LinearLayout>
-
-    <ProgressBar
-        android:id="@+id/progressbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone" />
-
-</RelativeLayout>
+</com.zhy.autolayout.AutoLinearLayout>

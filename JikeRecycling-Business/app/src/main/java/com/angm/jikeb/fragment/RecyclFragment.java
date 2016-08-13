@@ -9,11 +9,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.angm.jikeb.R;
+import com.angm.jikeb.adapter.MyRecycAdapter;
 import com.angm.jikeb.base.BaseFragment;
+import com.angm.jikeb.view.RecyclerViewHeader;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -28,12 +31,15 @@ public class RecyclFragment extends BaseFragment {
     RecyclerView rvMain;
     @Bind(R.id.sr_layout)
     SwipeRefreshLayout srLayout;
-/*    @Bind(R.id.tv_empty)
-    TextView tvEmpty;
-    @Bind(R.id.no_trip)
-    LinearLayout noTrip;*/
-    @Bind(R.id.progressbar)
-    ProgressBar progressbar;
+    @Bind(R.id.my_recycler_header)
+    RecyclerViewHeader myRecyclerHeader;
+
+    private List<String> data = new ArrayList<>();
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Nullable
     @Override
@@ -51,7 +57,6 @@ public class RecyclFragment extends BaseFragment {
     protected void FragmentInitData() {
         initSwipeLayout();
         initRecyclView();
-
     }
 
     /**
@@ -67,7 +72,19 @@ public class RecyclFragment extends BaseFragment {
         srLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-
+                srLayout.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        srLayout.setRefreshing(false);
+                    }
+                }, 2000);
+            }
+        });
+        myRecyclerHeader.setupHeader(rvMain);
+        myRecyclerHeader.setOnScrollTopListener(new RecyclerViewHeader.OnScrollTopListener() {
+            @Override
+            public void onTop(boolean isTop) {
+                srLayout.setEnabled(isTop);
             }
         });
     }
@@ -78,43 +95,11 @@ public class RecyclFragment extends BaseFragment {
     private void initRecyclView() {
 
         rvMain.setLayoutManager(new LinearLayoutManager(activity));
-        rvMain.setAdapter(new MyRecycAdapter());
+        rvMain.setAdapter(new MyRecycAdapter(activity, data));
         //设置Item增加、移除动画
         rvMain.setItemAnimator(new DefaultItemAnimator());
-    }
-
-
-    // RecycView 适配器
-    public class MyRecycAdapter extends RecyclerView.Adapter<MyRecycAdapter.MyViewHolder> {
-
-        public MyRecycAdapter() {
-        }
-        @Override
-        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            MyViewHolder holder = new MyViewHolder(LayoutInflater.from(activity).inflate(R.layout.recycview_item, parent,
-                    false));
-            return holder;
-        }
-
-        @Override
-        public void onBindViewHolder(MyViewHolder holder, int position) {
-            holder.tvName.setText("测试");
-        }
-
-        @Override
-        public int getItemCount() {
-            return 0;
-        }
-
-        class MyViewHolder extends RecyclerView.ViewHolder {
-            @Bind(R.id.tv_name)
-            TextView tvName;
-
-            public MyViewHolder(View view) {
-                super(view);
-                ButterKnife.bind(view);
-            }
-        }
+         /*关联*/
+        myRecyclerHeader.attachTo(rvMain);
     }
 
     @Override
@@ -122,4 +107,5 @@ public class RecyclFragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
+
 }

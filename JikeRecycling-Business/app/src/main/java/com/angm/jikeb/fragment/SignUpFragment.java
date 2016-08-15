@@ -1,23 +1,20 @@
-package com.angm.jikeb.activity;
+package com.angm.jikeb.fragment;
 
-import android.content.Context;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.angm.jikeb.R;
-import com.angm.jikeb.base.BaseActivity;
 import com.angm.jikeb.constant.NetWorkConstant;
 import com.angm.jikeb.util.Alert;
 import com.angm.jikeb.util.DesUtils;
@@ -32,7 +29,7 @@ import butterknife.Bind;
 
 
 //注册页
-public class SignUpActivity extends BaseActivity {
+public class SignUpFragment extends LevelTwoFragment {
 
     @Bind(R.id.sign_up_verify_button)
     Button signUpVerifyButton;
@@ -48,10 +45,6 @@ public class SignUpActivity extends BaseActivity {
     EditText edYespwd;
     @Bind(R.id.sign_up_chechkbox)
     CheckBox signUpChechkbox;
-    @Bind(R.id.tv_toolbar_center)
-    TextView tvToolbarCenter;
-    @Bind(R.id.toolbarTop)
-    Toolbar toolbarTop;
 
     private String encodeMobile;
     private String encodeVerify;
@@ -61,7 +54,6 @@ public class SignUpActivity extends BaseActivity {
     private String verify;
     private String pwd1;
     private String pwd2;
-    private Context context = SignUpActivity.this;
     private boolean stopThread = false;
     private Map<String, Object> mapValue = new HashMap<>();
     private Map<String, Object> mapVerCode = new HashMap<>();
@@ -84,20 +76,24 @@ public class SignUpActivity extends BaseActivity {
             }
         }
     };
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initToolbar();
     }
 
     @Override
-    public int getLayout() {
-        return R.layout.sign_up_bus;
+    public String getTitle() {
+        return "注册";
+    }
+
+    @Override
+    protected int getResLayout() {
+        return R.layout.fragment_sign_up_bus;
     }
 
     @Override
     public void initView() {
-        tvToolbarCenter.setText("注册");
         signUpVerifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,15 +108,7 @@ public class SignUpActivity extends BaseActivity {
             }
         });
     }
-    private void initToolbar() {
-        toolbarTop.setNavigationIcon(R.mipmap.back);
-        toolbarTop.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-    }
+
     public void getVerCode() {
         encryPtion();
         if (!TextUtils.isEmpty(mobile)) {
@@ -129,7 +117,7 @@ public class SignUpActivity extends BaseActivity {
                 String[] signCode = new String[]{mobile};
                 mapVerCode.put("sign", SignUtil.getSign(signCode));
                 mapVerCode.put("mobile", encodeMobile);
-                boolean networkAvailable = MobileUtils.isNetworkAvailable(context);
+                boolean networkAvailable = MobileUtils.isNetworkAvailable(getActivity());
                 if (networkAvailable) {
                     OkHttpUtils.getInstance(new OkHttpUtils.HttpCallBackListener() {
                         @Override
@@ -137,20 +125,21 @@ public class SignUpActivity extends BaseActivity {
                             Log.d("zzz", "code" + result);
                             ShowTime();
                             Looper.prepare();
-                            Toast.makeText(context, R.string.sign_send_code_success, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), R.string.sign_send_code_success, Toast.LENGTH_SHORT).show();
                             Looper.loop();
                         }
                     }).POST_DATA(NetWorkConstant.GET_VERCODE, mapVerCode);
                 } else {
-                    Toast.makeText(context, R.string.sign_in_network, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.sign_in_network, Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(context, R.string.sign_in_mobile_format, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.sign_in_mobile_format, Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(context, R.string.sign_in_mobile, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.sign_in_mobile, Toast.LENGTH_SHORT).show();
         }
     }
+
     public void encryPtion() {
         mobile = signUpMobileEdittext.getText().toString().trim();
         verify = signUpCaptchaEdittext.getText().toString().trim();
@@ -165,25 +154,26 @@ public class SignUpActivity extends BaseActivity {
             e.printStackTrace();
         }
     }
+
     public void validation() {
         encryPtion();
         boolean mobileNO = MobileUtils.isMobileNO(mobile);
         if (mobileNO) {
             if (TextUtils.isEmpty(verify)) {
-                Toast.makeText(context, R.string.sign_in_verify, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.sign_in_verify, Toast.LENGTH_SHORT).show();
             } else if (TextUtils.isEmpty(pwd1)) {
-                Toast.makeText(context, R.string.sign_in_pwd, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.sign_in_pwd, Toast.LENGTH_SHORT).show();
             } else if (TextUtils.isEmpty(pwd2)) {
-                Toast.makeText(context, R.string.sign_in_pwd, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.sign_in_pwd, Toast.LENGTH_SHORT).show();
             } else if (!pwd1.equals(pwd2)) {
-                Toast.makeText(context, R.string.sign_in_pwd_pwd2, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.sign_in_pwd_pwd2, Toast.LENGTH_SHORT).show();
             } else if (verify.length() < 4) {
-                Toast.makeText(context, R.string.sign_in_verify_count, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.sign_in_verify_count, Toast.LENGTH_SHORT).show();
             } else if (!signUpChechkbox.isChecked()) {
-                Toast.makeText(context, R.string.sign_in_check, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.sign_in_check, Toast.LENGTH_SHORT).show();
             } else {
-                Alert.showDialog(context);
-                boolean networkAvailable = MobileUtils.isNetworkAvailable(context);
+                Alert.showDialog(getActivity());
+                boolean networkAvailable = MobileUtils.isNetworkAvailable(getActivity());
                 if (networkAvailable) {
                     String[] signRegister = new String[]{mobile, verify, pwd1, pwd2, "2"};
                     mapValue.put("mobile", encodeMobile);
@@ -201,17 +191,14 @@ public class SignUpActivity extends BaseActivity {
                     }).POST_DATA(NetWorkConstant.REGISTER, mapValue);
                 } else {
                     Alert.mProgressDialog.dismiss();
-                    Toast.makeText(context, R.string.sign_in_network, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.sign_in_network, Toast.LENGTH_SHORT).show();
                 }
             }
         } else {
-            Toast.makeText(context, R.string.sign_in_mobile_format, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.sign_in_mobile_format, Toast.LENGTH_SHORT).show();
         }
     }
-    @Override
-    public void initData() {
 
-    }
     /*倒计时方法*/
     public void ShowTime() {
         new Thread() {
@@ -231,8 +218,9 @@ public class SignUpActivity extends BaseActivity {
             }
         }.start();
     }
+
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         stopThread = true;
     }

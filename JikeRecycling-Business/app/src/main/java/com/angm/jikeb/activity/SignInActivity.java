@@ -13,7 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.angm.jikeb.R;
+import com.angm.jikeb.base.BackActivity;
 import com.angm.jikeb.base.BaseActivity;
+import com.angm.jikeb.fragment.SignUpFragment;
 import com.angm.jikeb.util.Alert;
 import com.angm.jikeb.util.DesUtils;
 import com.angm.jikeb.util.MobileUtils;
@@ -62,7 +64,7 @@ public class SignInActivity extends BaseActivity {
         tvForgetSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
+                startFragment(BackActivity.class,SignUpFragment.class);
             }
         });
         signinStartButton.setOnClickListener(new View.OnClickListener() {

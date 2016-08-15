@@ -28,4 +28,7 @@
     <color name="yellow">#eef26c</color>
     <color name="black">#000000</color>
 
+
+    <color name="v4_btn_layout_bg">#fafafa</color>
+    <drawable name="dark_transparent">#B0000000</drawable>
 </resources>

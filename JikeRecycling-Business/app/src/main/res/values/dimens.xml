@@ -22,5 +22,8 @@
     <dimen name="text_view_50">50px</dimen>
     <dimen name="text_view_60">60px</dimen>
 
-
+    <dimen name="font_34">17sp</dimen>
+    <dimen name="input_font_updown">11dp</dimen>
+    <dimen name="input_updown">10dp</dimen>
+    <dimen name="input_left">10dp</dimen>
 </resources>

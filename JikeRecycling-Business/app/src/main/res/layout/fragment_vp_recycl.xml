@@ -9,8 +9,7 @@
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/sr_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="30px">
+        android:layout_height="match_parent">
 
         <com.zhy.autolayout.AutoFrameLayout
             android:layout_width="match_parent"

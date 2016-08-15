@@ -49,23 +49,23 @@ public class HomeFragment extends BaseFragment {
         fragmentVpHomeLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if(i==0){
-                   activity.startFragment(BackActivity.class,MoneyBagFragment.class);
-                }else if(i==1){
-                    activity.startFragment(BackActivity.class,MessageFragment.class);
-                }else if(i==2){
-                    activity.startFragment(BackActivity.class,SettingFragment.class);
+                if (i == 0) {
+                    activity.startFragment(BackActivity.class, MoneyBagFragment.class);
+                } else if (i == 1) {
+                    activity.startFragment(BackActivity.class, MessageFragment.class);
+                } else if (i == 2) {
+                    activity.startFragment(BackActivity.class, SettingFragment.class);
                 }
             }
         });
 
         /*跳转个人资料界面*/
-       fragmentVpHomeImage_Name.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               activity.startFragment(BackActivity.class,PersonDataFragment.class);
-           }
-       });
+        fragmentVpHomeImage_Name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.startFragment(BackActivity.class, PersonDataFragment.class);
+            }
+        });
     }
 
     @Override

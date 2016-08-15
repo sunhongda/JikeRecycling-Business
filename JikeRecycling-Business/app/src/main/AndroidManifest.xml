@@ -40,13 +40,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.PickPhotoActivity"
+            android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize|keyboard|keyboardHidden|locale|fontScale"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppStartLoad"/>
         <activity
             android:name=".base.BackActivity"
             android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden|adjustPan" />
-        <activity android:name=".activity.SignUpActivity"></activity>
         <activity
             android:name=".activity.SignInActivity"
             android:label="登录"

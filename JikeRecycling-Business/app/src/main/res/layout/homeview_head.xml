@@ -15,6 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30px"
             android:text="@string/first_online"
             android:textColor="@color/text_color_black"
             android:textSize="@dimen/text_view_50" />
@@ -24,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10px"
             android:text=" 10小时"
+            android:layout_marginTop="30px"
             android:textColor="@color/text_color_black"
             android:textSize="@dimen/text_view_50" />
 
@@ -31,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40px"
+            android:layout_marginTop="30px"
             android:text="@string/first_get"
             android:textColor="@color/text_color_black"
             android:textSize="@dimen/text_view_50" />
@@ -40,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15px"
             android:text="2"
+            android:layout_marginTop="30px"
             android:textColor="@color/text_color_black"
             android:textSize="@dimen/text_view_50" />
     </com.zhy.autolayout.AutoLinearLayout>

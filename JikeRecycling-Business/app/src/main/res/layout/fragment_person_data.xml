@@ -38,7 +38,9 @@
             android:layout_marginTop="15px"
             android:layout_toLeftOf="@+id/fragment_person_data_go"
             android:src="@mipmap/person" />
+
     </com.zhy.autolayout.AutoRelativeLayout>
+
 <!--姓名-->
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
@@ -136,6 +138,13 @@
             android:text="UC66666"
             android:textSize="@dimen/text_view_30" />
     </com.zhy.autolayout.AutoRelativeLayout>
+    <ImageView
+        android:id="@+id/head_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/loading"
+        android:visibility="gone" />
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"

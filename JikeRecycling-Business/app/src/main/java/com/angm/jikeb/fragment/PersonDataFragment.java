@@ -1,11 +1,16 @@
 package com.angm.jikeb.fragment;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
 import com.angm.jikeb.R;
@@ -24,7 +29,9 @@ public class PersonDataFragment extends LevelTwoFragment {
 
 
     @Bind(R.id.fragment_person_data_user_image)
-    ImageView fragmentPersonDataUserImage;
+    ImageView mHeadView;
+    @Bind(R.id.head_loading)
+    ImageView headLoading;
 
     @Nullable
     @Override
@@ -46,7 +53,7 @@ public class PersonDataFragment extends LevelTwoFragment {
 
     @Override
     protected void initView() {
-        fragmentPersonDataUserImage.setOnClickListener(new View.OnClickListener() {
+        mHeadView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 doPickPhotoAction(UserConstant.HEAD_REQUEST_CODE, UserConstant.HEAD_IMAGE_NAME);
@@ -62,6 +69,22 @@ public class PersonDataFragment extends LevelTwoFragment {
         intent.putExtra("option", PhotoSelectOptions.DEFALUT);
         intent.putExtra(PickPhotoActivity.FILE_NAME, fileName);
         startActivityForResult(intent, requestCode);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        RotateAnimation animation = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF,
+                0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        animation.setRepeatCount(Animation.INFINITE);
+        animation.setDuration(2000);
+        if (resultCode == 1) {
+            String result = data.getStringExtra(PickPhotoActivity.PHOTO_PATH);
+            if (!TextUtils.isEmpty(result)) {
+                Bitmap bitmap = BitmapFactory.decodeFile(result);
+                mHeadView.setImageBitmap(bitmap);
+            }
+        }
     }
 
     @Override

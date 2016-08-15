@@ -77,7 +77,7 @@ public class RecyclFragment extends BaseFragment {
                     public void run() {
                         srLayout.setRefreshing(false);
                     }
-                }, 2000);
+                }, 3000);
             }
         });
         myRecyclerHeader.setupHeader(rvMain);
@@ -101,6 +101,7 @@ public class RecyclFragment extends BaseFragment {
          /*关联*/
         myRecyclerHeader.attachTo(rvMain);
     }
+
 
     @Override
     public void onDestroyView() {

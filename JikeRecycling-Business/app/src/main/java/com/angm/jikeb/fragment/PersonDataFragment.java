@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +54,10 @@ public class PersonDataFragment extends LevelTwoFragment {
 
     @Override
     protected void initView() {
+        Bitmap bitmap = BitmapFactory.decodeFile("/storage/emulated/0/buslinkdriver/photo/head.jpg");
+
+        mHeadView.setImageBitmap(bitmap);
+
         mHeadView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +75,7 @@ public class PersonDataFragment extends LevelTwoFragment {
         intent.putExtra(PickPhotoActivity.FILE_NAME, fileName);
         startActivityForResult(intent, requestCode);
     }
-
+//    /storage/emulated/0/buslinkdriver/photo/head.jpg
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -78,8 +83,10 @@ public class PersonDataFragment extends LevelTwoFragment {
                 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         animation.setRepeatCount(Animation.INFINITE);
         animation.setDuration(2000);
+
         if (resultCode == 1) {
             String result = data.getStringExtra(PickPhotoActivity.PHOTO_PATH);
+            Log.i(" ", "result  : " + result);
             if (!TextUtils.isEmpty(result)) {
                 Bitmap bitmap = BitmapFactory.decodeFile(result);
                 mHeadView.setImageBitmap(bitmap);

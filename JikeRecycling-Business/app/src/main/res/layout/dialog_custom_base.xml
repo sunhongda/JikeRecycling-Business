@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="25dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="25dp">
+
+    <TextView
+        android:id="@+id/dialog_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:text="爷,要走了吗~⊙﹏⊙"
+        android:textColor="#666666"
+        android:textSize="15sp" />
+
+<LinearLayout
+    android:id="@+id/chbeckbox_sel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:visibility="gone"
+    >
+   <CheckBox
+       android:id="@+id/chbeckbox"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:button="@null"
+       android:background="@drawable/radiobutton_selector"
+       />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="不再提醒此对话框"
+        android:textColor="#AAAAAA"
+        />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="110dp"
+            android:layout_height="34dp"
+            android:background="@drawable/corner_common_border_gray"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#AAAAAA"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_width="110dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/corner_common_border_gray"
+            android:gravity="center"
+            android:text="确认"
+            android:textColor="#1EA8FF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

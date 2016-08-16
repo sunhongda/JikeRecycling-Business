@@ -60,12 +60,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.PickPhotoActivity"
-            android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize|keyboard|keyboardHidden|locale|fontScale"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppStartLoad" />
-        <activity
             android:name=".base.BackActivity"
             android:label=""
             android:screenOrientation="portrait"

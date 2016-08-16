@@ -43,6 +43,7 @@ public class SplashActivity extends AppCompatActivity {
             startActivity(new Intent(this, WelComeActivity.class));
             finish();
         }
+
         MyFragmentStatePager adpter = new MyFragmentStatePager(getSupportFragmentManager());
         ColorAnimationView colorAnimationView = (ColorAnimationView) findViewById(R.id.ColorAnimationView);
         viewPager = (ViewPager) findViewById(R.id.viewPager);

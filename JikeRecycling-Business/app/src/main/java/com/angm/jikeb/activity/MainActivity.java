@@ -58,6 +58,7 @@ public class MainActivity extends BaseActivity {
 
         String fragmentName = getIntent().getStringExtra("fragmentName");
         Bundle bundle = getIntent().getBundleExtra("fragmentBundle");
+
         initToolbar();
         registerMessageReceiver();
         JPushInterface.init(getApplicationContext());
@@ -124,7 +125,7 @@ public class MainActivity extends BaseActivity {
         slidingTabLayout.setTabTitleTextSize(16);//标题字体大小
         slidingTabLayout.setTitleTextColor(Color.WHITE, Color.WHITE);//标题字体颜色
         slidingTabLayout.setTabStripWidth(110);//滑动条宽度
-        slidingTabLayout.setSelectedIndicatorColors(Color.WHITE);//滑动条颜色
+        slidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.text_color_cheng));//滑动条颜色
         slidingTabLayout.setDistributeEvenly(true); //均匀平铺选项卡
         slidingTabLayout.setViewPager(mPager);//最后调用此方法
     }

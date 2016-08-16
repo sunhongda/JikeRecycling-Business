@@ -1,6 +1,9 @@
 package com.angm.jikeb.activity;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,9 +19,11 @@ import com.amap.api.maps.AMap;
 import com.angm.jikeb.R;
 import com.angm.jikeb.base.BaseActivity;
 import com.angm.jikeb.base.BaseFragment;
+import com.angm.jikeb.constant.NetWorkConstant;
 import com.angm.jikeb.fragment.FindFragment;
 import com.angm.jikeb.fragment.HomeFragment;
 import com.angm.jikeb.fragment.RecyclFragment;
+import com.angm.jikeb.util.ExampleUtil;
 import com.angm.jikeb.view.Indicator.SlidingTabLayout;
 import com.zhy.autolayout.AutoFrameLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
@@ -26,6 +31,7 @@ import com.zhy.autolayout.AutoRelativeLayout;
 import java.util.ArrayList;
 
 import butterknife.Bind;
+import cn.jpush.android.api.JPushInterface;
 
 
 public class MainActivity extends BaseActivity {
@@ -44,7 +50,7 @@ public class MainActivity extends BaseActivity {
     AutoRelativeLayout mainRl;
     private boolean isWarnedToClose = false;
     private AMap mMap;
-
+    private MessageReceiver mMessageReceiver;
     ///11
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +59,10 @@ public class MainActivity extends BaseActivity {
         String fragmentName = getIntent().getStringExtra("fragmentName");
         Bundle bundle = getIntent().getBundleExtra("fragmentBundle");
         initToolbar();
-
+        registerMessageReceiver();
+        JPushInterface.init(getApplicationContext());
+        JPushInterface.getRegistrationID(getApplicationContext());
     }
-
-
     @Override
     public int getLayout() {
         return R.layout.activity_main;
@@ -87,6 +93,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onResume() {
+        NetWorkConstant.isForeground = true;
         super.onResume();
 
     }
@@ -190,6 +197,41 @@ public class MainActivity extends BaseActivity {
             }, 2000);
         }
     }
+    public void registerMessageReceiver() {
+        mMessageReceiver = new MessageReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
+        filter.addAction(NetWorkConstant.MESSAGE_RECEIVED_ACTION);
+        registerReceiver(mMessageReceiver, filter);
+    }
 
 
+
+    public class MessageReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (NetWorkConstant.MESSAGE_RECEIVED_ACTION.equals(intent.getAction())) {
+                String messge = intent.getStringExtra(NetWorkConstant.KEY_MESSAGE);
+                String extras = intent.getStringExtra(NetWorkConstant.KEY_EXTRAS);
+                StringBuilder showMsg = new StringBuilder();
+                showMsg.append(NetWorkConstant.KEY_MESSAGE + " : " + messge + "\n");
+                if (!ExampleUtil.isEmpty(extras)) {
+                    showMsg.append(NetWorkConstant.KEY_EXTRAS + " : " + extras + "\n");
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        NetWorkConstant.isForeground = false;
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        unregisterReceiver(mMessageReceiver);
+        super.onDestroy();
+    }
 }

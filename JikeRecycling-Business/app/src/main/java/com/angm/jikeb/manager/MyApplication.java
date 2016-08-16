@@ -106,4 +106,5 @@ public class MyApplication extends  Application {
             killActivity(activities.get(i));
         }
     }
+
 }

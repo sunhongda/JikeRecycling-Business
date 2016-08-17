@@ -1,5 +1,0 @@
-<resources>
-    <dimen name="toolbar_padding_top">24dp</dimen>
-    <dimen name="drawer_margin_top">56dp</dimen>
-    <dimen name="drawer_margin_top_2">71dp</dimen>
-</resources>

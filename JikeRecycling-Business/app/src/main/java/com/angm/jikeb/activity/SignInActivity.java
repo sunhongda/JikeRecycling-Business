@@ -64,7 +64,7 @@ public class SignInActivity extends BaseActivity {
         tvForgetSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startFragment(BackActivity.class,SignUpFragment.class);
+                startFragment(BackActivity.class, SignUpFragment.class);
             }
         });
         signinStartButton.setOnClickListener(new View.OnClickListener() {

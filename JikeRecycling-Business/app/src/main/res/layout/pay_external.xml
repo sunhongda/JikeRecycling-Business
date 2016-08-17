@@ -8,7 +8,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -22,7 +22,7 @@
             <!--android:src="@drawable/msp_demo_title"-->
             <!--tools:ignore="ContentDescription" />-->
 
-            <LinearLayout
+            <com.zhy.autolayout.AutoLinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -47,9 +47,9 @@
                     android:textColor="#333333"
                     android:textSize="@dimen/text_view_30"
                     tools:ignore="HardcodedText" />
-            </LinearLayout>
+            </com.zhy.autolayout.AutoLinearLayout>
 
-            <LinearLayout
+            <com.zhy.autolayout.AutoLinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -73,9 +73,9 @@
                     android:textColor="#333333"
                     android:textSize="@dimen/text_view_30"
                     tools:ignore="HardcodedText" />
-            </LinearLayout>
+            </com.zhy.autolayout.AutoLinearLayout>
 
-            <LinearLayout
+            <com.zhy.autolayout.AutoLinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -100,7 +100,7 @@
                     android:textColor="#ff6600"
                     android:textSize="@dimen/text_view_30"
                     tools:ignore="HardcodedText" />
-            </LinearLayout>
+            </com.zhy.autolayout.AutoLinearLayout>
 
             <Button
                 android:id="@+id/pay"
@@ -123,7 +123,7 @@
                 android:text="网页支付转native"
                 android:textColor="@color/text_color_white"
                 tools:ignore="HardcodedText" />
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
     </ScrollView>
 </com.zhy.autolayout.AutoLinearLayout>

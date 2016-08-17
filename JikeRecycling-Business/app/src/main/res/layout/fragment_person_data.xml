@@ -29,14 +29,12 @@
             android:layout_marginRight="30px"
             android:src="@mipmap/go" />
 
-        <com.angm.jikeb.view.CircleImageView
+        <com.angm.jikeb.view.RoundImageView
             android:id="@+id/fragment_person_data_user_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100px"
+            android:layout_height="100px"
             android:layout_centerVertical="true"
-            android:layout_marginBottom="15px"
-            android:layout_marginRight="15px"
-            android:layout_marginTop="15px"
+            android:layout_marginRight="20px"
             android:layout_toLeftOf="@+id/fragment_person_data_go"
             android:src="@mipmap/person" />
 

@@ -15,7 +15,7 @@
             android:layout_height="170px"
             android:layout_marginLeft="70px"
             android:layout_marginTop="50px"
-            android:background="@color/back_color_ff"
+            android:background="@drawable/selector_ll_color"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="10px">
@@ -43,7 +43,7 @@
             android:layout_marginLeft="30px"
             android:layout_marginTop="50px"
             android:layout_toRightOf="@id/rl_find1"
-            android:background="@color/back_color_ff"
+            android:background="@drawable/selector_ll_color"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="10px">

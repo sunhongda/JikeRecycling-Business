@@ -47,26 +47,13 @@
                 android:layout_height="100px"
                 android:layout_weight="1"
                 android:background="@color/back_color_ff"
-                android:hint="手机号码"
+                android:hint="姓名"
                 android:inputType="phone"
                 android:maxLength="11"
                 android:paddingLeft="40px"
                 android:singleLine="true"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/text_view_30"/>
-
-            <Button
-                android:id="@+id/signup_next_verify_button"
-                android:layout_width="130px"
-                android:layout_height="70px"
-                android:layout_marginLeft="20px"
-                android:layout_marginRight="20px"
-                android:clickable="false"
-                android:enabled="false"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="验证"
-                android:textColor="@color/text_color_white"
-                android:textSize="@dimen/text_view_30" />
 
         </com.zhy.autolayout.AutoLinearLayout>
 
@@ -89,7 +76,7 @@
                 android:layout_marginRight="20px"
                 android:layout_marginTop="10px"
                 android:background="@color/back_color_ff"
-                android:hint="验证码"
+                android:hint="身份证号"
                 android:inputType="number"
                 android:maxLength="4"
                 android:paddingLeft="40px"

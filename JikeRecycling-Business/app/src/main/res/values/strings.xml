@@ -37,4 +37,10 @@
     <string name="gpslocate">定位</string>
     <string name="gpsrotate">旋转</string>
 
+    <!--注册 界面-->
+    <string name="sign_up_dialog_content">我们的工作人员会在24小时内联系您哦~</string>
+    <string name="sign_up_dialog_success">提交成功</string>
+    <string name="sign_up_dialog_btn">我知道了</string>
+
+
 </resources>

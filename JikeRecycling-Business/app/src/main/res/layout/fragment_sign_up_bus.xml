@@ -160,7 +160,7 @@
                 android:layout_marginLeft="30px"
                 android:layout_marginRight="40px"
                 android:background="@color/text_color_cheng"
-                android:text="确认"
+                android:text="下一步"
                 android:textColor="@color/text_color_white"
                 android:textSize="@dimen/text_view_30" />
         </com.zhy.autolayout.AutoRelativeLayout>

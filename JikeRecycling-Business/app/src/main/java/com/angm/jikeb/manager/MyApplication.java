@@ -34,6 +34,9 @@ public class MyApplication extends  Application {
         //初始化Toast
         ToastHelper.init(this);
 
+/*        JPushInterface.init(getApplicationContext());
+        JPushInterface.getRegistrationID(getApplicationContext());*/
+
         NoHttp.init(this);
     }
     public static Application getApplication() {

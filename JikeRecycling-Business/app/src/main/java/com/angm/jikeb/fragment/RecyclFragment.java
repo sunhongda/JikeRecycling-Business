@@ -95,7 +95,7 @@ public class RecyclFragment extends BaseFragment {
     private void initRecyclView() {
 
         rvMain.setLayoutManager(new LinearLayoutManager(activity));
-        rvMain.setAdapter(new MyRecycAdapter(activity, data));
+        rvMain.setAdapter(new MyRecycAdapter(activity, data,activity));
         //设置Item增加、移除动画
         rvMain.setItemAnimator(new DefaultItemAnimator());
          /*关联*/

@@ -99,7 +99,8 @@
             android:name="com.amap.api.v2.apikey"
             android:value="b67fde868e656d723f2171bf4283f36f" />
 
-        <service android:name="com.amap.api.location.APSService" />
+        <service android:name="com.amap.api.location.APSService"></service>
+        <!--极光推送-->
         <service
             android:name="cn.jpush.android.service.PushService"
             android:enabled="true"

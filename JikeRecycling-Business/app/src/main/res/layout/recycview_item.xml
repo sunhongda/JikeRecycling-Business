@@ -110,6 +110,7 @@
             android:layout_marginTop="10px">
 
             <Button
+                android:id="@+id/recycler_item_btn"
                 android:layout_width="210px"
                 android:layout_height="50px"
                 android:layout_centerHorizontal="true"

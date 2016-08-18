@@ -31,5 +31,10 @@
     <string name="sign_up_send_code">发送验证码</string>
     <string name="sign_up_restart">重新发送</string>
     <string name="sign_send_code_success">请查收</string>
+    <string name="sign_send_code_failure">发送失败</string>
+
+    <string name="gpsfollow">追随</string>
+    <string name="gpslocate">定位</string>
+    <string name="gpsrotate">旋转</string>
 
 </resources>

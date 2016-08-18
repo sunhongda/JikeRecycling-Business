@@ -15,12 +15,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.angm.jikeb.R;
+import com.angm.jikeb.bean.CodeResult;
 import com.angm.jikeb.constant.NetWorkConstant;
 import com.angm.jikeb.util.Alert;
 import com.angm.jikeb.util.DesUtils;
 import com.angm.jikeb.util.MobileUtils;
 import com.angm.jikeb.util.OkHttpUtils;
 import com.angm.jikeb.util.SignUtil;
+import com.google.gson.Gson;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -123,10 +125,19 @@ public class SignUpFragment extends LevelTwoFragment {
                         @Override
                         public void response(String result) {
                             Log.d("zzz", "code" + result);
-                            ShowTime();
-                            Looper.prepare();
-                            Toast.makeText(getActivity(), R.string.sign_send_code_success, Toast.LENGTH_SHORT).show();
-                            Looper.loop();
+                            Gson gson = new Gson();
+                            CodeResult codeResult = gson.fromJson(result, CodeResult.class);
+                            if(codeResult.getCode().equals("1")){
+                                ShowTime();
+                                Looper.prepare();
+                                Toast.makeText(getActivity(), R.string.sign_send_code_success, Toast.LENGTH_SHORT).show();
+                                Looper.loop();
+                            }else{
+                                Looper.prepare();
+                                Toast.makeText(getActivity(), R.string.sign_send_code_failure, Toast.LENGTH_SHORT).show();
+                                Looper.loop();
+                            }
+
                         }
                     }).POST_DATA(NetWorkConstant.GET_VERCODE, mapVerCode);
                 } else {

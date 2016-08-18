@@ -61,7 +61,7 @@ public class FindFragment extends BaseFragment {
         switch (v.getId()) {
             case R.id.rl_find1:
                 Log.i("   OnClick rl_find1");
-                activity.startFragment(BackActivity.class, MapFragment.class);
+                activity.startFragment(BackActivity.class, RewardFragment.class);
                 break;
 
             case R.id.rl_find2:

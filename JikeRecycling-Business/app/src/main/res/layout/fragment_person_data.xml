@@ -8,16 +8,10 @@
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
-<<<<<<< HEAD
+
         android:layout_height="135px"
         android:background="@color/back_color_ff">
-=======
-        android:layout_height="130px"
-        android:background="@drawable/selector_ll_color"
-        android:clickable="true"
-        android:focusable="true"
-        android:focusableInTouchMode="false">
->>>>>>> refs/remotes/origin/master
+
 
         <TextView
             android:layout_width="wrap_content"

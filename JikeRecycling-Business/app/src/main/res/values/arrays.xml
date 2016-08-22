@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<resources>
-<string-array name="tab_name">
-        <item>我</item>
-        <item>即客回收</item>
-        <item>发现</item>
-    </string-array>
-</resources>
